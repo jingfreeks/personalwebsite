@@ -6,14 +6,18 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="home" className="mb-14">
-      <div className="mb-2.5 text-xs uppercase tracking-[0.12em] text-accent-light">
+    <section id="home" className="mb-16">
+      <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-divider px-3 py-1 font-mono text-[11px] text-secondary">
+        <span className="status-dot h-1.5 w-1.5 rounded-full bg-accent" />
+        Open to new opportunities
+      </div>
+      <div className="mb-3 font-mono text-xs uppercase tracking-[0.14em] text-accent-light">
         Software Developer &middot; Davao City, Philippines
       </div>
-      <h1 className="mb-4 text-[40px] font-bold tracking-[-0.01em]">
+      <h1 className="font-heading mb-4 text-[42px] font-semibold tracking-[-0.02em]">
         Lyndell T. Dobluis
       </h1>
-      <p className="mb-6 max-w-[640px] text-base leading-relaxed text-secondary">
+      <p className="mb-7 max-w-[62ch] text-base leading-relaxed text-secondary">
         Software engineer with 15+ years of experience across web and mobile
         development, specializing in React Native applications for
         cross-platform iOS/Android delivery. Proven track record building
@@ -30,16 +34,19 @@ export default function Hero() {
       <div className="flex gap-3">
         <a
           href="#contact"
-          className="rounded-md bg-accent px-[22px] py-[11px] text-sm font-semibold text-white"
+          className="rounded-md bg-accent px-[22px] py-[11px] text-sm font-semibold text-white transition-colors hover:bg-accent-light"
         >
           Get in touch
         </a>
       </div>
-      <div className="mt-8 grid grid-cols-1 gap-3.5 sm:grid-cols-3">
+      <div className="mt-9 grid grid-cols-1 gap-3.5 sm:grid-cols-3">
         {stats.map((stat) => (
-          <div key={stat.label} className="rounded-[10px] bg-panel p-4">
-            <div className="text-[11px] text-muted">{stat.label}</div>
-            <div className="text-[22px] font-bold">{stat.value}</div>
+          <div
+            key={stat.label}
+            className="rounded-lg border border-divider bg-panel/40 p-4 transition-colors hover:border-accent/50"
+          >
+            <div className="font-mono text-[11px] text-muted">{stat.label}</div>
+            <div className="font-heading text-[22px] font-semibold">{stat.value}</div>
           </div>
         ))}
       </div>
