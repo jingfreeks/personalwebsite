@@ -1,7 +1,10 @@
 import Sidebar from "@/components/Sidebar";
 import Hero from "@/components/Hero";
+import ProofStrip from "@/components/ProofStrip";
+import Services from "@/components/Services";
+import CaseStudies from "@/components/CaseStudies";
+import About from "@/components/About";
 import Experience from "@/components/Experience";
-import Software from "@/components/Software";
 import Skills from "@/components/Skills";
 import Achievements from "@/components/Achievements";
 import Certificates from "@/components/Certificates";
@@ -14,8 +17,11 @@ export default function Home() {
       <Sidebar />
       <main className="min-w-0 max-w-[960px] flex-1 px-5 py-10 sm:px-8 md:px-14 md:py-12">
         <Hero />
+        <ProofStrip />
+        <Services />
+        <CaseStudies />
+        <About />
         <Experience />
-        <Software />
         <Skills />
         <Achievements />
         <Certificates />
