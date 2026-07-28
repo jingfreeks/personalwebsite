@@ -1,4 +1,4 @@
-import { positioning } from "@/lib/data";
+import { positioning, proofLine, timezoneNote } from "@/lib/data";
 
 const stats = [
   { label: "Experience", value: "15+ yrs" },
@@ -14,13 +14,16 @@ export default function Hero() {
         Available for new freelance projects
       </div>
       <div className="mb-3 font-mono text-xs uppercase tracking-[0.14em] text-accent-light">
-        React Native Developer &middot; Davao City, Philippines
+        Fullstack Web &amp; Mobile Developer &middot; Davao City, Philippines
       </div>
       <h1 className="font-heading mb-4 text-[42px] font-semibold tracking-[-0.02em]">
         Lyndell T. Dobluis
       </h1>
-      <p className="mb-7 max-w-[58ch] text-lg leading-relaxed text-primary">
+      <p className="mb-3 max-w-[58ch] text-lg leading-relaxed text-primary">
         {positioning}
+      </p>
+      <p className="mb-7 max-w-[58ch] text-sm leading-relaxed text-secondary">
+        {proofLine}
       </p>
       <div className="flex flex-wrap gap-3">
         <a
@@ -47,6 +50,7 @@ export default function Hero() {
           </div>
         ))}
       </div>
+      <p className="mt-4 font-mono text-xs text-muted">{timezoneNote}</p>
     </section>
   );
 }

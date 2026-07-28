@@ -5,9 +5,8 @@ import Services from "@/components/Services";
 import CaseStudies from "@/components/CaseStudies";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
+import Recognition from "@/components/Recognition";
 import Skills from "@/components/Skills";
-import Achievements from "@/components/Achievements";
-import Certificates from "@/components/Certificates";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -22,9 +21,8 @@ export default function Home() {
         <CaseStudies />
         <About />
         <Experience />
+        <Recognition />
         <Skills />
-        <Achievements />
-        <Certificates />
         <Contact />
         <Footer />
       </main>
