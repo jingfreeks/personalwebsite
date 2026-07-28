@@ -14,6 +14,13 @@ export default function Contact() {
         </h2>
         <p className="mb-5 text-[13px] text-muted">
           Tell me a bit about what you&apos;re building — I reply within a day.
+          Prefer email?{" "}
+          <a
+            href="mailto:lyndell.dobluis@gmail.com"
+            className="text-link no-underline hover:underline"
+          >
+            lyndell.dobluis@gmail.com
+          </a>
         </p>
         <form
           onSubmit={(e) => {

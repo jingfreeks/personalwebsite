@@ -73,14 +73,6 @@ export default function Sidebar() {
         >
           LinkedIn ↗
         </a>
-        <a
-          href="https://www.facebook.com/lyndell.dobluis"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="plain text-muted2 transition-colors hover:text-accent-light"
-        >
-          Facebook ↗
-        </a>
       </div>
     </nav>
   );

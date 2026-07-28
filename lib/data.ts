@@ -1,5 +1,11 @@
 export const positioning =
-  "I build React Native apps that ship — end-to-end, from API integration to App Store release — for teams who need a senior engineer without the full-time headcount.";
+  "I build fullstack products across web and mobile — React, React Native, and AI-assisted engineering workflows — shipped end-to-end for teams who need a senior engineer without the full-time headcount.";
+
+export const proofLine =
+  "Shipped React Native apps for a regional bank (Metrobank), a US home-services startup, and a Saudi consultancy.";
+
+export const timezoneNote =
+  "Davao City, Philippines (GMT+8) — overlapping mornings with US ET, full workdays with EU and Gulf teams.";
 
 export const services = [
   {
@@ -7,6 +13,12 @@ export const services = [
     scope:
       "Cross-platform iOS/Android apps, MVP to production, including App Store & Play Store release.",
     timeline: "6–10 weeks",
+  },
+  {
+    name: "Web App Development (React)",
+    scope:
+      "Fullstack React web apps — client dashboards and internal tools, wired to your existing backend or built from scratch.",
+    timeline: "4–8 weeks",
   },
   {
     name: "Firebase & Real-Time Backend Integration",
@@ -17,7 +29,7 @@ export const services = [
   {
     name: "Fractional Senior Engineer",
     scope:
-      "Ongoing or retainer support — code review, leading dev efforts, collaborating directly with your team across time zones.",
+      "Ongoing or retainer support — code review, leading dev efforts, and AI-assisted delivery, collaborating directly with your team across time zones.",
     timeline: "Ongoing",
   },
 ];
@@ -30,7 +42,8 @@ export const caseStudies = [
       "Needed a React Native booking app to connect customers with home-service providers, built and shipped by a small remote team.",
     build:
       "Built the app end-to-end as part of the core engineering team — booking flow, provider matching, and state management.",
-    result: "Shipped to production and used as the company's primary customer-facing app.",
+    result:
+      "Shipped to production as the company's primary customer-facing app (usage figures under NDA).",
     tech: ["React Native", "Redux", "Firebase"],
     src: "/assets/apps/fixlers.jpg",
   },
@@ -41,7 +54,8 @@ export const caseStudies = [
       "A regional bank needed a secure, reliable mobile login and account experience for its retail banking app.",
     build:
       "Worked within Yondu's engineering team on the mobile login and account flows for the Metrobank consumer app.",
-    result: "Delivered as part of a banking app used by Metrobank's retail customers.",
+    result:
+      "Delivered as part of a production release for a regulated financial institution (metrics under NDA).",
     tech: ["React Native", "REST APIs"],
     src: "/assets/apps/yondu-metrobank.jpg",
   },
@@ -51,31 +65,32 @@ export const caseStudies = [
     problem:
       "Needed a React Native booking app localized for the Arabic market, built while working on-site in Riyadh, Saudi Arabia.",
     build:
-      "Built the consultation-booking app end-to-end, including RTL support and localization for the Arabic-speaking market.",
-    result: "Shipped as the company's client-facing booking app.",
+      "Built the consultation-booking app end-to-end, including full Arabic RTL support and localization.",
+    result:
+      "Shipped as the company's client-facing booking app (metrics under NDA).",
     tech: ["React Native", "Localization"],
     src: "/assets/apps/alwasim.jpg",
   },
 ];
 
-export const qualifications = [
-  '6 years of experience in React Native (Redux) and Hooks',
-  '6 years of experience in Firebase setup and authentication',
-  '2 years experience in REST API integration',
-  'Basic knowledge of MySQL, WebSockets, Socket.IO and WebRTC',
-  'Knowledge in Git repositories (GitHub, GitLab, Bitbucket)',
-  'Knowledge in Agile approach and unit testing',
-  'Knowledge in TypeScript and JavaScript',
-];
-
 export const techStack = [
   'React Native', 'React', 'TypeScript', 'JavaScript', 'Redux', 'Redux Saga',
-  'Redux Toolkit', 'React Navigation', 'Hooks', 'Socket.IO', 'Agora.io (WebRTC)',
-  'Firebase', 'JEST', 'Git / GitHub / GitLab / Bitbucket', 'Postman',
+  'Redux Toolkit', 'React Navigation', 'Hooks', 'REST APIs', 'Socket.IO',
+  'Agora.io (WebRTC)', 'Firebase', 'MySQL', 'JEST', 'Claude Code (AI-Assisted Development)',
+  'Git / GitHub / GitLab / Bitbucket', 'Postman',
   'Visual Studio Code', 'Xcode', 'Android Studio', 'Trello', 'JIRA',
 ];
 
-export const experience = [
+type ExperienceEntry = {
+  dates: string;
+  title: string;
+  company: string;
+  location: string;
+  summary?: boolean;
+};
+
+export const experience: ExperienceEntry[] = [
+  { dates: '2024–Present', title: 'Independent React Native Contractor', company: 'Self-employed', location: 'Remote' },
   { dates: '2024', title: 'Lead Developer', company: 'MyShed Company', location: 'Davao City' },
   { dates: '2022–2023', title: 'Software Engineer', company: 'Fixlers Company', location: 'Spring Valley, NY' },
   { dates: '2022', title: 'App Developer', company: 'AKLaunch Co.', location: 'Passaic, NJ' },
@@ -85,35 +100,28 @@ export const experience = [
   { dates: '2018–2019', title: 'System Developer', company: 'PRL BPO Technology', location: 'Davao City' },
   { dates: '2017–2018', title: 'IT Head / Backend Developer', company: 'BinhiMedfi Inc.', location: 'Cagayan de Oro City' },
   { dates: '2016–2017', title: 'SEO Specialist', company: 'Thinklogic Marketing Inc.', location: 'Cagayan de Oro City' },
-  { dates: '2012–2016', title: 'Computer Programmer', company: 'Sadeem Harafi Co.', location: 'Jubail Industrial City' },
-  { dates: '2010–2012', title: 'oDesk SEO Contractor', company: 'oDesk.com', location: 'Remote' },
-  { dates: '2008–2012', title: 'Junior Programmer', company: 'Syntactics Inc.', location: 'Cagayan de Oro City' },
+  {
+    dates: '2008–2016',
+    title: 'Programmer & web developer roles in the Philippines and Saudi Arabia',
+    company: 'Syntactics, Sadeem/Al-Harafi, oDesk',
+    location: '',
+    summary: true,
+  },
 ];
 
-export const softwareDeveloped = [
-  { src: '/assets/apps/fixlers.jpg', company: 'Fixlers Company', title: 'Fixlers', meta: 'Home-services booking app (React Native)' },
-  { src: '/assets/apps/yondu-metrobank.jpg', company: 'Yondu Inc.', title: 'Metrobank Mobile', meta: 'Banking app login (React Native)' },
-  { src: '/assets/apps/alwasim.jpg', company: 'Al Wasim Information Technology', title: 'Consultation App', meta: 'Arabic-market booking app (React Native)' },
-  { src: '/assets/apps/binhimedfi.jpg', company: 'BinhiMedfi Inc.', title: 'BINHI-MeDFI Payroll System', meta: 'Time-in/time-out payroll system' },
-  { src: '/assets/apps/fligno-rentahero.jpg', company: 'Fligno Softwares Inc.', title: 'Rent A Hero', meta: 'Freelance job-booking app' },
-];
+type RecognitionEntry = {
+  year: string;
+  text: string;
+  link?: string;
+};
 
-export const imageCertificates = [
-  { thumb: '/assets/certs/syntactics-coe-sm.jpg', src: '/assets/certs/syntactics-coe.jpg', company: 'Syntactics Inc.', title: 'Certificate of Employment', meta: 'Software Developer · 2008–2012' },
-  { thumb: '/assets/certs/sadeem-coe-sm.jpg', src: '/assets/certs/sadeem-coe.jpg', company: 'Sadeem / Al-Harafi Co.', title: 'Certificate of Employment', meta: 'Computer Programmer · 2012–2016' },
-  { thumb: '/assets/certs/sadeem-appreciation-sm.jpg', src: '/assets/certs/sadeem-appreciation.jpg', company: 'Sadeem / Al-Harafi Co.', title: 'Certificate of Appreciation', meta: 'Outstanding Performance · 2015' },
-];
-
-export const pdfCertificates = [
-  { src: '/assets/certs/aklaunch-coe.pdf', company: 'AKLaunch Co.', title: 'Certificate of Employment', meta: 'App Developer · 2022' },
-  { src: '/assets/certs/binhimedfi-coe.pdf', company: 'BinhiMedfi Inc.', title: 'Certificate of Employment', meta: 'IT Head / Backend Developer · 2017–2018' },
-  { src: '/assets/certs/fligno-coe.pdf', company: 'Fligno Softwares Inc.', title: 'Certificate of Employment', meta: 'Associate Web Developer · 2019–2020' },
-  { src: '/assets/certs/prlbpo-coe.pdf', company: 'PRL BPO Technology', title: 'Certificate of Employment', meta: 'System Developer · 2018–2019' },
-  { src: '/assets/certs/thinklogic-coe.pdf', company: 'Thinklogic Marketing Inc.', title: 'Certificate of Employment', meta: 'SEO Specialist · 2016–2017' },
-];
-
-export const achievements = [
+export const recognition: RecognitionEntry[] = [
   { year: '2009', text: 'Employee of the Year — Syntactics Inc.' },
+  {
+    year: '2015',
+    text: 'Certificate of Appreciation for Outstanding Performance — Sadeem / Al-Harafi Co.',
+    link: '/assets/certs/sadeem-appreciation.jpg',
+  },
   { year: '2021', text: 'Team Awardee — Yondu Inc.' },
 ];
 
@@ -123,6 +131,5 @@ export const navLinks = [
   { href: '#case-studies', label: 'Case Studies' },
   { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
-  { href: '#certificates', label: 'Certificates' },
   { href: '#contact', label: 'Contact' },
 ];
