@@ -28,13 +28,20 @@ export default function CaseStudies() {
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-accent-light">
-                    {cs.company}
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-accent-light">
+                      {cs.company}
+                    </div>
+                    <div className="font-heading text-base font-medium">
+                      {cs.title}
+                    </div>
                   </div>
-                  <div className="font-heading text-base font-medium">
-                    {cs.title}
-                  </div>
+                  {cs.nda && (
+                    <span className="shrink-0 rounded-full border border-divider px-2.5 py-[3px] font-mono text-[10px] uppercase tracking-[0.06em] text-muted">
+                      NDA
+                    </span>
+                  )}
                 </div>
                 <div className="grid grid-cols-1 gap-3 text-[13px] leading-relaxed sm:grid-cols-3">
                   <div>
