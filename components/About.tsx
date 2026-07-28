@@ -16,7 +16,10 @@ export default function About() {
           workflow, which means faster delivery without cutting corners on
           review or testing. Since 2024 I&apos;ve been running an
           independent practice, and I&apos;m now taking on select freelance
-          and contract engineering work.
+          and contract engineering work. Outside of client projects, I also
+          own and run a small sari-sari store (neighborhood mini-store) —
+          which keeps me close to the day-to-day realities of running a
+          small business, not just building software for one.
         </p>
       </section>
     </Reveal>

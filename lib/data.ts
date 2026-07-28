@@ -43,7 +43,8 @@ export const caseStudies = [
     build:
       "Built the app end-to-end as part of the core engineering team — booking flow, provider matching, and state management.",
     result:
-      "Shipped to production as the company's primary customer-facing app (usage figures under NDA).",
+      "Shipped to production as the company's primary customer-facing app.",
+    nda: true,
     tech: ["React Native", "Redux", "Firebase"],
     src: "/assets/apps/fixlers.jpg",
   },
@@ -55,7 +56,8 @@ export const caseStudies = [
     build:
       "Worked within Yondu's engineering team on the mobile login and account flows for the Metrobank consumer app.",
     result:
-      "Delivered as part of a production release for a regulated financial institution (metrics under NDA).",
+      "Delivered as part of a production release for a regulated financial institution.",
+    nda: true,
     tech: ["React Native", "REST APIs"],
     src: "/assets/apps/yondu-metrobank.jpg",
   },
@@ -67,18 +69,34 @@ export const caseStudies = [
     build:
       "Built the consultation-booking app end-to-end, including full Arabic RTL support and localization.",
     result:
-      "Shipped as the company's client-facing booking app (metrics under NDA).",
+      "Shipped as the company's client-facing booking app.",
+    nda: true,
     tech: ["React Native", "Localization"],
     src: "/assets/apps/alwasim.jpg",
   },
 ];
 
-export const techStack = [
-  'React Native', 'React', 'TypeScript', 'JavaScript', 'Redux', 'Redux Saga',
-  'Redux Toolkit', 'React Navigation', 'Hooks', 'REST APIs', 'Socket.IO',
-  'Agora.io (WebRTC)', 'Firebase', 'MySQL', 'JEST', 'Claude Code (AI-Assisted Development)',
-  'Git / GitHub / GitLab / Bitbucket', 'Postman',
-  'Visual Studio Code', 'Xcode', 'Android Studio', 'Trello', 'JIRA',
+export const skillGroups = [
+  {
+    category: 'Frontend & Web',
+    description: 'Building fast, responsive web interfaces.',
+    items: ['React', 'TypeScript', 'JavaScript', 'Redux', 'Redux Saga', 'Redux Toolkit', 'Hooks'],
+  },
+  {
+    category: 'Mobile',
+    description: 'Cross-platform iOS/Android apps, App Store to Play Store.',
+    items: ['React Native', 'React Navigation', 'Xcode', 'Android Studio'],
+  },
+  {
+    category: 'Backend & Real-Time',
+    description: 'APIs, data, auth, and live features.',
+    items: ['REST APIs', 'Firebase', 'MySQL', 'Socket.IO', 'Agora.io (WebRTC)'],
+  },
+  {
+    category: 'AI & Tooling',
+    description: 'Shipping faster without cutting corners.',
+    items: ['Claude Code (AI-Assisted Development)', 'JEST', 'Git / GitHub / GitLab / Bitbucket', 'Postman', 'Visual Studio Code', 'Trello', 'JIRA'],
+  },
 ];
 
 type ExperienceEntry = {

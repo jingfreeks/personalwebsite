@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-nunito);
   --font-mono: var(--font-plex-mono);
 
   --color-page: #0a1118;
@@ -15,9 +15,9 @@
   --color-muted: #6c7d92;
   --color-muted2: #8798ac;
 
-  --color-accent: #5b8def;
-  --color-accent-light: #7fa4e8;
-  --color-link: #8fb4e0;
+  --color-accent: #4c6e93;
+  --color-accent-light: #7fa0c4;
+  --color-link: #7fa0c4;
   --color-tag: #9fb0c4;
   --color-body: #b7c3d1;
   --color-footer: #55647a;
@@ -30,7 +30,7 @@ body {
 
 @layer utilities {
   .font-heading {
-    font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-fjalla-one), ui-sans-serif, system-ui, sans-serif;
   }
 }
 
@@ -43,7 +43,7 @@ a.plain:hover {
 }
 
 ::selection {
-  background: rgba(91, 141, 239, 0.3);
+  background: rgba(76, 110, 147, 0.35);
 }
 
 :focus-visible {
