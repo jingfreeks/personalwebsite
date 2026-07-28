@@ -1,3 +1,63 @@
+export const positioning =
+  "I build React Native apps that ship — end-to-end, from API integration to App Store release — for teams who need a senior engineer without the full-time headcount.";
+
+export const services = [
+  {
+    name: "React Native App Builds",
+    scope:
+      "Cross-platform iOS/Android apps, MVP to production, including App Store & Play Store release.",
+    timeline: "6–10 weeks",
+  },
+  {
+    name: "Firebase & Real-Time Backend Integration",
+    scope:
+      "Auth, REST API integration, and real-time features (WebRTC/Socket.io) wired into an existing or new app.",
+    timeline: "2–4 weeks",
+  },
+  {
+    name: "Fractional Senior Engineer",
+    scope:
+      "Ongoing or retainer support — code review, leading dev efforts, collaborating directly with your team across time zones.",
+    timeline: "Ongoing",
+  },
+];
+
+export const caseStudies = [
+  {
+    company: "Fixlers Company",
+    title: "Fixlers — Home-Services Booking App",
+    problem:
+      "Needed a React Native booking app to connect customers with home-service providers, built and shipped by a small remote team.",
+    build:
+      "Built the app end-to-end as part of the core engineering team — booking flow, provider matching, and state management.",
+    result: "Shipped to production and used as the company's primary customer-facing app.",
+    tech: ["React Native", "Redux", "Firebase"],
+    src: "/assets/apps/fixlers.jpg",
+  },
+  {
+    company: "Yondu Inc.",
+    title: "Metrobank Mobile — Banking App",
+    problem:
+      "A regional bank needed a secure, reliable mobile login and account experience for its retail banking app.",
+    build:
+      "Worked within Yondu's engineering team on the mobile login and account flows for the Metrobank consumer app.",
+    result: "Delivered as part of a banking app used by Metrobank's retail customers.",
+    tech: ["React Native", "REST APIs"],
+    src: "/assets/apps/yondu-metrobank.jpg",
+  },
+  {
+    company: "Al Wasim Information Technology",
+    title: "Consultation App — Arabic-Market Booking",
+    problem:
+      "Needed a React Native booking app localized for the Arabic market, built while working on-site in Riyadh, Saudi Arabia.",
+    build:
+      "Built the consultation-booking app end-to-end, including RTL support and localization for the Arabic-speaking market.",
+    result: "Shipped as the company's client-facing booking app.",
+    tech: ["React Native", "Localization"],
+    src: "/assets/apps/alwasim.jpg",
+  },
+];
+
 export const qualifications = [
   '6 years of experience in React Native (Redux) and Hooks',
   '6 years of experience in Firebase setup and authentication',
@@ -59,8 +119,9 @@ export const achievements = [
 
 export const navLinks = [
   { href: '#home', label: 'Home' },
-  { href: '#experience', label: 'Work' },
-  { href: '#software', label: 'Software' },
+  { href: '#services', label: 'Services' },
+  { href: '#case-studies', label: 'Case Studies' },
+  { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
   { href: '#certificates', label: 'Certificates' },
   { href: '#contact', label: 'Contact' },

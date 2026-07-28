@@ -10,10 +10,10 @@ export default function Contact() {
     <Reveal>
       <section id="contact" className="mb-10">
         <h2 className="font-heading mb-1.5 text-[22px] font-semibold">
-          Get in Touch
+          Start a Project
         </h2>
         <p className="mb-5 text-[13px] text-muted">
-          Have an opportunity or a question? Send a message below.
+          Tell me a bit about what you&apos;re building — I reply within a day.
         </p>
         <form
           onSubmit={(e) => {
@@ -38,7 +38,7 @@ export default function Contact() {
           />
           <textarea
             name="message"
-            placeholder="Message"
+            placeholder="What are you building, and what do you need help with?"
             rows={5}
             required
             className="resize-y rounded-md border border-input-border bg-panel/40 px-3.5 py-3 font-sans text-sm text-primary placeholder:text-muted focus-visible:border-accent"
@@ -47,7 +47,7 @@ export default function Contact() {
             type="submit"
             className="rounded-md bg-accent px-[22px] py-[13px] text-sm font-semibold text-white transition-colors hover:bg-accent-light"
           >
-            {submitted ? "Message sent" : "Send message"}
+            {submitted ? "Message sent — I'll be in touch" : "Send message"}
           </button>
         </form>
       </section>
