@@ -48,7 +48,7 @@ export default function SkillsPanel() {
               aria-pressed={on}
               onClick={() => setFilter(c.id)}
               className={`flex-1 whitespace-nowrap rounded-lg px-2 py-1.5 text-[0.72rem] font-medium transition-colors ${
-                on ? "bg-accent text-white shadow-[0_0_16px_rgba(22,131,255,0.6)]" : "text-primary/80 hover:text-primary"
+                on ? "bg-accent-strong text-white shadow-[0_0_16px_rgba(22,131,255,0.6)]" : "text-primary/80 hover:text-primary"
               }`}
             >
               {c.label}

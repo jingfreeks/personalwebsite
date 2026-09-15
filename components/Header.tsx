@@ -54,7 +54,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8 lg:h-14 lg:max-w-none lg:pl-[5.4%] lg:pr-[3%]">
-        <Link href="/#home" className="plain flex items-center gap-3" aria-label="Home">
+        <Link href="/#home" className="plain flex items-center gap-3">
           <Image
             src="/assets/logo-mark-dark.png"
             alt=""

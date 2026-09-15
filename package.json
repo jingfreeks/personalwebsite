@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seo:check": "node scripts/seo-check.mjs",
+    "seo:lighthouse": "npx --yes @lhci/cli@0.15.x autorun",
+    "seo": "npm run build && npm run seo:check && npm run seo:lighthouse"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

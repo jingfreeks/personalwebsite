@@ -21,7 +21,7 @@ const plexMono = IBM_Plex_Mono({
 
 const title = `${site.name} — Full Stack Web & Mobile Developer`;
 const description =
-  "Lyndell Dobluis is a software developer in Davao City, Philippines building web and mobile apps with React, React Native, Next.js and Supabase — founder of Dells Software (Tindahan POS). Open to remote work.";
+  "Davao City software developer building web and mobile apps with React, React Native, Next.js and Supabase. Founder of Dells Software. Open to remote work.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -73,7 +73,8 @@ export default function RootLayout({
         {children}
         <Footer />
         <JsonLd />
-        <Analytics />
+        {/* Vercel serves the analytics script; skip it for local/CI `next start` builds */}
+        {process.env.VERCEL === "1" && <Analytics />}
       </body>
     </html>
   );

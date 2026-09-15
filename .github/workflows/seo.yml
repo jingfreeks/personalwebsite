@@ -1,0 +1,31 @@
+name: SEO checks
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+  schedule:
+    # weekly audit of the live site (Monday 00:00 UTC)
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - name: SEO smoke test (built site)
+        run: npm run seo:check
+      - name: Lighthouse CI (SEO / accessibility / best practices)
+        run: npx --yes @lhci/cli@0.15.x autorun
+      - name: SEO smoke test (production)
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: npm run seo:check -- https://portfolio-site-rho-eosin.vercel.app

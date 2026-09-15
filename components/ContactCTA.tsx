@@ -18,7 +18,7 @@ export default function ContactCTA() {
         </div>
         <a
           href="#contact"
-          className="plain inline-flex shrink-0 items-center gap-2 rounded-xl bg-accent px-6 py-3 text-[0.85rem] font-semibold text-white shadow-[0_0_24px_rgba(22,131,255,0.6)] transition-colors hover:bg-accent-strong"
+          className="plain inline-flex shrink-0 items-center gap-2 rounded-xl bg-accent-strong px-6 py-3 text-[0.85rem] font-semibold text-white shadow-[0_0_24px_rgba(22,131,255,0.6)] transition-colors hover:bg-accent"
         >
           Get In Touch <ArrowRight className="h-4 w-4" />
         </a>
