@@ -52,7 +52,7 @@ export default function Contact() {
           />
           <button
             type="submit"
-            className="rounded-md bg-accent px-[22px] py-[13px] text-sm font-semibold text-white transition-colors hover:bg-accent-light"
+            className="rounded-md bg-accent-strong px-[22px] py-[13px] text-sm font-semibold text-white transition-colors hover:bg-accent"
           >
             {submitted ? "Message sent — I'll be in touch" : "Send message"}
           </button>

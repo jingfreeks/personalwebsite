@@ -6,11 +6,14 @@ export default function CaseStudies() {
   return (
     <Reveal>
       <section id="case-studies" className="mb-16">
-        <h2 className="font-heading mb-1.5 text-[22px] font-semibold">
+        <div className="mb-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-light">
+          Client work
+        </div>
+        <h2 className="font-heading mb-1.5 text-3xl font-bold sm:text-4xl">
           Case Studies
         </h2>
         <p className="mb-[18px] text-[13px] text-muted">
-          A few recent builds — problem, what I built, and the result.
+          Selected client builds — problem, what I built, and the result.
         </p>
         <div className="flex flex-col gap-5">
           {caseStudies.map((cs) => (

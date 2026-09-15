@@ -1,12 +1,3 @@
-export const positioning =
-  "I build fullstack products across web and mobile — React, React Native, and AI-assisted engineering workflows — shipped end-to-end for teams who need a senior engineer without the full-time headcount.";
-
-export const proofLine =
-  "Shipped React Native apps for a regional bank (Metrobank), a US home-services startup, and a Saudi consultancy.";
-
-export const timezoneNote =
-  "Davao City, Philippines (GMT+8) — overlapping mornings with US ET, full workdays with EU and Gulf teams.";
-
 export const services = [
   {
     name: "React Native App Builds",
@@ -76,57 +67,6 @@ export const caseStudies = [
   },
 ];
 
-export const skillGroups = [
-  {
-    category: 'Frontend & Web',
-    description: 'Building fast, responsive web interfaces.',
-    items: ['React', 'TypeScript', 'JavaScript', 'Redux', 'Redux Saga', 'Redux Toolkit', 'Hooks'],
-  },
-  {
-    category: 'Mobile',
-    description: 'Cross-platform iOS/Android apps, App Store to Play Store.',
-    items: ['React Native', 'React Navigation', 'Xcode', 'Android Studio'],
-  },
-  {
-    category: 'Backend & Real-Time',
-    description: 'APIs, data, auth, and live features.',
-    items: ['REST APIs', 'Firebase', 'MySQL', 'Socket.IO', 'Agora.io (WebRTC)'],
-  },
-  {
-    category: 'AI & Tooling',
-    description: 'Shipping faster without cutting corners.',
-    items: ['Claude Code (AI-Assisted Development)', 'JEST', 'Git / GitHub / GitLab / Bitbucket', 'Postman', 'Visual Studio Code', 'Trello', 'JIRA'],
-  },
-];
-
-type ExperienceEntry = {
-  dates: string;
-  title: string;
-  company: string;
-  location: string;
-  summary?: boolean;
-};
-
-export const experience: ExperienceEntry[] = [
-  { dates: '2024–Present', title: 'Independent React Native Contractor', company: 'Self-employed', location: 'Remote' },
-  { dates: '2024', title: 'Lead Developer', company: 'MyShed Company', location: 'Davao City' },
-  { dates: '2022–2023', title: 'Software Engineer', company: 'Fixlers Company', location: 'Spring Valley, NY' },
-  { dates: '2022', title: 'App Developer', company: 'AKLaunch Co.', location: 'Passaic, NJ' },
-  { dates: '2020–2022', title: 'Software Engineer', company: 'Yondu Inc.', location: 'Taguig City' },
-  { dates: '2020', title: 'React Native Developer', company: 'Al Wasim Information Technology', location: 'Riyadh, Saudi Arabia' },
-  { dates: '2019–2020', title: 'Associate Web Developer', company: 'Fligno Softwares Inc.', location: 'Cagayan de Oro City' },
-  { dates: '2018–2019', title: 'System Developer', company: 'PRL BPO Technology', location: 'Davao City' },
-  { dates: '2017–2018', title: 'IT Head / Backend Developer', company: 'BinhiMedfi Inc.', location: 'Cagayan de Oro City' },
-  { dates: '2016–2017', title: 'SEO Specialist', company: 'Thinklogic Marketing Inc.', location: 'Cagayan de Oro City' },
-  {
-    dates: '2008–2016',
-    title: 'Programmer & web developer roles in the Philippines and Saudi Arabia',
-    company: 'Syntactics, Sadeem/Al-Harafi, oDesk',
-    location: '',
-    summary: true,
-  },
-];
-
 type RecognitionEntry = {
   year: string;
   text: string;
@@ -141,13 +81,4 @@ export const recognition: RecognitionEntry[] = [
     link: '/assets/certs/sadeem-appreciation.jpg',
   },
   { year: '2021', text: 'Team Awardee — Yondu Inc.' },
-];
-
-export const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Services' },
-  { href: '#case-studies', label: 'Case Studies' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
 ];

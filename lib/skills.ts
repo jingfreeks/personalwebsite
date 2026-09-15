@@ -1,0 +1,45 @@
+export type SkillCategory = "Frontend" | "Backend" | "Mobile" | "Tools";
+
+export const skillCategories: { id: "all" | SkillCategory; label: string }[] = [
+  { id: "all", label: "All" },
+  { id: "Frontend", label: "Frontend" },
+  { id: "Backend", label: "Backend" },
+  { id: "Mobile", label: "Mobile" },
+  { id: "Tools", label: "Tools & Others" },
+];
+
+// Only technologies with evidence in shipped projects or work history.
+export const skills: { name: string; category: SkillCategory }[] = [
+  { name: "React", category: "Frontend" },
+  { name: "Next.js", category: "Frontend" },
+  { name: "TypeScript", category: "Frontend" },
+  { name: "JavaScript", category: "Frontend" },
+  { name: "Vite", category: "Frontend" },
+  { name: "Tailwind CSS", category: "Frontend" },
+  { name: "Redux", category: "Frontend" },
+  { name: "React Native", category: "Mobile" },
+  { name: "Expo", category: "Mobile" },
+  { name: "React Navigation", category: "Mobile" },
+  { name: "NativeWind", category: "Mobile" },
+  { name: "Supabase", category: "Backend" },
+  { name: "PostgreSQL", category: "Backend" },
+  { name: "Node.js", category: "Backend" },
+  { name: "Express", category: "Backend" },
+  { name: "MongoDB", category: "Backend" },
+  { name: "Firebase", category: "Backend" },
+  { name: "REST APIs", category: "Backend" },
+  { name: "MySQL", category: "Backend" },
+  { name: "PHP", category: "Backend" },
+  { name: "Socket.IO", category: "Backend" },
+  { name: "WebRTC (Agora)", category: "Backend" },
+  { name: "Git / GitHub", category: "Tools" },
+  { name: "GitHub Actions", category: "Tools" },
+  { name: "Playwright", category: "Tools" },
+  { name: "Vitest / Jest", category: "Tools" },
+  { name: "Postman", category: "Tools" },
+  { name: "VS Code", category: "Tools" },
+  { name: "Xcode", category: "Tools" },
+  { name: "Android Studio", category: "Tools" },
+  { name: "Claude Code", category: "Tools" },
+  { name: "Trello / JIRA", category: "Tools" },
+];
