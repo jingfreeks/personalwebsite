@@ -1,14 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Reveal from "@/components/Reveal";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <Reveal>
-      <section id="contact" className="mb-10">
+      <section id="contact">
         <h2 className="font-heading mb-1.5 text-[22px] font-semibold">
           Start a Project
         </h2>
@@ -58,6 +56,5 @@ export default function Contact() {
           </button>
         </form>
       </section>
-    </Reveal>
   );
 }
