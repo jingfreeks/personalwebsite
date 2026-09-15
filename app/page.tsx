@@ -3,6 +3,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 import CaseStudies from "@/components/CaseStudies";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import SkillsPanel from "@/components/SkillsPanel";
+import FocusCard from "@/components/FocusCard";
 import AboutSection from "@/components/AboutSection";
 import Values from "@/components/Values";
 import Philosophy from "@/components/Philosophy";
@@ -16,9 +17,10 @@ export default function Home() {
       <Hero />
       <Reveal><ProjectGrid /></Reveal>
       <CaseStudies />
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+      <div className="mx-auto grid max-w-[64rem] gap-10 px-5 py-12 sm:px-8 lg:max-w-none lg:grid-cols-[38.5%_1fr_21%] lg:gap-4 lg:px-[3%] [&>*]:min-w-0">
         <Reveal><ExperienceTimeline /></Reveal>
         <Reveal><SkillsPanel /></Reveal>
+        <Reveal><FocusCard /></Reveal>
       </div>
       <Reveal><AboutSection /></Reveal>
       <Reveal><Values /></Reveal>

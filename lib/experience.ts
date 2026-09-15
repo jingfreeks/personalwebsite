@@ -75,3 +75,33 @@ export const experience: ExperienceEntry[] = [
     summary: true,
   },
 ];
+
+// Condensed, resume-verified timeline for the home page (full detail is in the
+// resume PDF and the `experience` list above).
+export type TimelineEntry = { dates: string; company: string; role: string; text: string };
+export const timeline: TimelineEntry[] = [
+  {
+    dates: "2024 — Present",
+    company: "Dells Software (Founder / Developer)",
+    role: "Full Stack Developer",
+    text: "Developing business systems (POS, Inventory, Accounting, Farm Management) for Filipino businesses.",
+  },
+  {
+    dates: "2020 — 2024",
+    company: "Remote / Contract — MyShed, Fixlers, AK Launch, Yondu, Al Wasim",
+    role: "React Native / ReactJS Developer",
+    text: "Worked with local and international clients (PH, US, Saudi Arabia) on web and mobile applications.",
+  },
+  {
+    dates: "2017 — 2020",
+    company: "BinhiMedfi, PRL BPO, Fligno Softwares",
+    role: "IT Head / Backend & Web Developer",
+    text: "Led IT operations and built backend systems and web applications for local companies.",
+  },
+  {
+    dates: "2008 — 2017",
+    company: "Syntactics, Sadeem Harafi (KSA), Thinklogic",
+    role: "Junior Programmer → Computer Programmer",
+    text: "Started as a junior programmer (2009 Employee of the Year), then programmed abroad and worked in SEO.",
+  },
+];
