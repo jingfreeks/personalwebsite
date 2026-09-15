@@ -8,6 +8,12 @@ export type Project = {
   tech: string[];
   icon: ProjectIcon;
   status: string;
+  /** short blurb shown on the card (2 lines) */
+  summary: string;
+  /** chips shown on the card */
+  stack: string[];
+  /** show a phone mockup next to the laptop */
+  phone?: boolean;
   image: { src: string; alt: string };
   href?: string;
   hrefLabel?: string;
@@ -25,6 +31,9 @@ export const projects: Project[] = [
     tech: ["React", "TypeScript", "Vite", "React Native", "Supabase"],
     icon: "pos",
     status: "In production",
+    summary: "A modern POS and inventory system built for Filipino small businesses.",
+    stack: ["React", "TypeScript", "Supabase"],
+    phone: true,
     image: { src: "/assets/projects/tindahan-pos-dashboard.jpg", alt: "Tindahan POS admin dashboard with sales, low-stock alerts and customer credit" },
   },
   {
@@ -36,6 +45,8 @@ export const projects: Project[] = [
     tech: ["React", "Vite", "TypeScript", "Supabase"],
     icon: "inventory",
     status: "Platform module",
+    summary: "Multi-store inventory system with real-time stock monitoring.",
+    stack: ["React", "Vite", "Supabase"],
     image: { src: "/assets/projects/inventory-app.jpg", alt: "Inventory Management sign-in screen — stock, orders and deliveries" },
   },
   {
@@ -47,6 +58,8 @@ export const projects: Project[] = [
     tech: ["React", "TypeScript", "PostgreSQL", "Supabase"],
     icon: "accounting",
     status: "In development",
+    summary: "A simple and powerful accounting system integrated with POS.",
+    stack: ["React", "TypeScript", "PostgreSQL"],
     image: { src: "/assets/projects/accounting.jpg", alt: "Accounting system intro screen — Know exactly where your money went" },
   },
   {
@@ -58,6 +71,9 @@ export const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     icon: "farm",
     status: "Live",
+    summary: "Farm website and online ordering for poultry, goats, fish, ducks and eggs.",
+    stack: ["Next.js", "TypeScript", "Supabase"],
+    phone: true,
     image: { src: "/assets/projects/dells-farm.jpg", alt: "Dells Farm website — From family farm to family table" },
     href: "https://dells-farm-site.vercel.app",
     hrefLabel: "View Project",
