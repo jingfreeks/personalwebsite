@@ -25,7 +25,7 @@ export default function AboutSection() {
         download
         className="plain mt-5 inline-flex items-center gap-2 rounded-xl border border-accent/70 bg-page/40 px-6 py-2.5 text-[0.85rem] font-semibold text-primary shadow-[0_0_18px_rgba(22,131,255,0.35)] transition-colors hover:bg-accent/15"
       >
-        Learn More <ArrowRight className="h-4 w-4" />
+        Download My Resume <ArrowRight className="h-4 w-4" />
       </a>
     </section>
   );

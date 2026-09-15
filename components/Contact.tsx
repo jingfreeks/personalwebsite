@@ -43,7 +43,7 @@ export default function Contact() {
       </h2>
       <p className="mb-5 text-[0.85rem] text-primary/80">
         Tell me a bit about what you&apos;re building — I reply within a day. Prefer email?{" "}
-        <a href={`mailto:${site.email}`} className="text-link no-underline hover:underline">
+        <a href={`mailto:${site.email}`} className="text-link underline decoration-link/50 underline-offset-2 hover:decoration-link">
           {site.email}
         </a>
       </p>
@@ -94,7 +94,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={sending}
-            className="rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(22,131,255,0.5)] transition-colors hover:bg-accent-strong disabled:cursor-wait disabled:opacity-70"
+            className="rounded-xl bg-accent-strong px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(22,131,255,0.5)] transition-colors hover:bg-accent disabled:cursor-wait disabled:opacity-70"
           >
             {sending ? "Sending…" : "Send message"}
           </button>

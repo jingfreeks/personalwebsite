@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="plain inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-[10px] bg-accent px-5 text-[0.85rem] font-medium text-white shadow-[0_0_28px_rgba(22,131,255,0.55)] transition-colors hover:bg-accent-strong"
+                className="plain inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-[10px] bg-accent-strong px-5 text-[0.85rem] font-medium text-white shadow-[0_0_28px_rgba(22,131,255,0.55)] transition-colors hover:bg-accent"
               >
                 Let&apos;s Work Together <ArrowRight className="h-4 w-4" />
               </a>
