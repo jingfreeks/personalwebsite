@@ -3,7 +3,7 @@
 /* Design tokens — Software Developer Command Center.
    All component colors come from here. */
 @theme inline {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-jakarta);
   --font-mono: var(--font-plex-mono);
 
   /* backgrounds & surfaces */
@@ -36,7 +36,16 @@
 }
 
 html {
-  scroll-padding-top: 84px;
+  scroll-padding-top: 5.25rem;
+}
+
+/* The design is a fixed 1024px composition. Above lg the root font-size grows
+   with the viewport (16px @1024 → 25px @1600) so rem-based layout scales like
+   the design image does when the window is expanded. */
+@media (min-width: 1024px) {
+  html {
+    font-size: clamp(16px, 1.5625vw, 30px);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -52,7 +61,7 @@ body {
 
 @layer utilities {
   .font-heading {
-    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
     letter-spacing: -0.02em;
   }
 }

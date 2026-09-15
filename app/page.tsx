@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import StatsBar from "@/components/StatsBar";
 import ProjectGrid from "@/components/ProjectGrid";
 import CaseStudies from "@/components/CaseStudies";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
@@ -15,7 +14,6 @@ export default function Home() {
   return (
     <main className="bg-page text-primary">
       <Hero />
-      <StatsBar />
       <Reveal><ProjectGrid /></Reveal>
       <CaseStudies />
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">

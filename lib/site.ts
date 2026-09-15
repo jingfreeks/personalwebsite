@@ -15,7 +15,7 @@ export const site = {
   url: "https://portfolio-site-rho-eosin.vercel.app",
   resumeUrl: "/Lyndell_Dobluis_Resume.pdf",
   availability: ["Available for opportunities", "Open to Remote"],
-  quote: "Good software creates real opportunities.",
+  quote: "Technology works best when it makes business simpler.",
 };
 
 export const navLinks = [

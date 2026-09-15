@@ -1,4 +1,5 @@
 import { navLinks, site, socials } from "@/lib/site";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, SocialMark } from "@/components/Icons";
 
@@ -7,9 +8,7 @@ export default function Footer() {
     <footer className="border-t border-divider/60 bg-sidebar">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-10 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
-          <span className="font-heading flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-cyan text-sm font-bold text-page">
-            LD
-          </span>
+          <Image src="/assets/logo-mark-dark.png" alt="" width={230} height={256} className="h-10 w-auto" />
           <div className="leading-tight">
             <div className="font-heading text-sm font-semibold text-primary">{site.name}</div>
             <div className="font-mono text-[11px] text-muted">{site.role}</div>

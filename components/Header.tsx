@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, site } from "@/lib/site";
@@ -49,21 +50,26 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? "border-b border-divider/70 bg-page/92 backdrop-blur-md" : "border-b border-transparent"
+        scrolled || open ? "border-b border-divider/70 bg-page/92 backdrop-blur-md" : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8 lg:h-14 lg:max-w-none lg:pl-[5.4%] lg:pr-[3%]">
         <Link href="/#home" className="plain flex items-center gap-3" aria-label="Home">
-          <span className="font-heading flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-cyan text-sm font-bold text-page shadow-[0_8px_24px_-8px_rgba(22,131,255,0.9)]">
-            LD
-          </span>
+          <Image
+            src="/assets/logo-mark-dark.png"
+            alt=""
+            width={230}
+            height={256}
+            priority
+            className="h-11 w-auto drop-shadow-[0_0_12px_rgba(22,131,255,0.5)] lg:h-[2.9rem]"
+          />
           <span className="leading-tight">
-            <span className="font-heading block whitespace-nowrap text-sm font-semibold text-primary">{site.name}</span>
-            <span className="hidden font-mono text-[11px] text-muted lg:block">{site.role}</span>
+            <span className="font-heading block whitespace-nowrap text-[0.85rem] font-semibold text-primary">{site.name}</span>
+            <span className="block text-[0.68rem] text-secondary">{site.role}</span>
           </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 rounded-xl bg-[#0b1a2e]/70 px-3 py-1 backdrop-blur-sm lg:flex">
           {navLinks.map((l) => {
             const on = isActive(l.id);
             return (
@@ -71,8 +77,8 @@ export default function Header() {
                 key={l.id}
                 href={l.href}
                 aria-current={on ? "true" : undefined}
-                className={`plain relative whitespace-nowrap rounded-md px-3 py-2 text-sm transition-colors ${
-                  on ? "text-primary" : "text-muted hover:text-primary"
+                className={`plain relative whitespace-nowrap rounded-md px-3.5 py-1.5 text-[0.76rem] font-medium transition-colors ${
+                  on ? "text-primary" : "text-secondary hover:text-primary"
                 }`}
               >
                 {l.label}
@@ -85,9 +91,9 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <Link
             href="/#contact"
-            className="plain hidden items-center gap-2 whitespace-nowrap rounded-lg border border-accent/60 bg-accent/10 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-accent/20 lg:inline-flex"
+            className="plain hidden items-center gap-2 whitespace-nowrap rounded-xl border border-accent/80 bg-page/40 px-5 py-2 text-[0.78rem] font-medium text-primary shadow-[0_0_18px_rgba(22,131,255,0.45)] transition-colors hover:bg-accent/20 lg:inline-flex"
           >
-            Let&apos;s Talk <Send size={16} />
+            Let&apos;s Talk <Send className="h-4 w-4" />
           </Link>
           <button
             type="button"
@@ -119,7 +125,7 @@ export default function Header() {
             onClick={() => setOpen(false)}
             className="plain mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-accent-strong px-4 py-3 text-sm font-semibold text-white"
           >
-            Let&apos;s Talk <Send size={16} />
+            Let&apos;s Talk <Send className="h-4 w-4" />
           </Link>
         </nav>
       </div>

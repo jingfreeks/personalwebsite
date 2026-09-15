@@ -1,29 +1,31 @@
 import { site, whatIBuild } from "@/lib/site";
-import { Check } from "@/components/Icons";
+import { Globe, Layers, Shield, Code, Target } from "@/components/Icons";
+
+const icons = [Globe, Layers, Shield, Code, Target];
 
 export default function TechPanel() {
   return (
     <div className="flex flex-col gap-3">
-      <div className="glass rounded-2xl p-4 shadow-[0_18px_50px_-24px_rgba(22,131,255,0.6)] sm:p-5">
-        <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-accent-light">What I build</div>
-        <ul className="space-y-2">
-          {whatIBuild.map((f) => (
-            <li key={f} className="flex items-center gap-2.5 text-sm text-secondary">
-              <span className="flex h-5 w-5 items-center justify-center rounded-md border border-accent/50 bg-accent/15 text-accent-light">
-                <Check size={12} />
+      <ul className="rounded-xl border border-white/10 bg-[#0b1a2e]/85 px-2.5 py-2 shadow-[0_18px_50px_-24px_rgba(22,131,255,0.6)] backdrop-blur-md" aria-label="What I build">
+        {whatIBuild.map((f, i) => {
+          const Icon = icons[i % icons.length];
+          return (
+            <li key={f} className="flex min-w-0 items-center gap-2 whitespace-nowrap py-[0.3rem] text-[0.68rem] text-primary">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-accent/50 bg-accent/12 text-accent-light">
+                <Icon className="h-[0.7rem] w-[0.7rem]" />
               </span>
               {f}
             </li>
-          ))}
-        </ul>
-      </div>
-      <figure className="glass rounded-2xl px-4 py-3">
-        <blockquote className="font-heading text-sm font-semibold leading-snug text-primary">
-          <span aria-hidden="true" className="mr-1 text-accent-light">&ldquo;</span>
-          {site.quote}
-          <span aria-hidden="true" className="ml-0.5 text-accent-light">&rdquo;</span>
-        </blockquote>
-        <figcaption className="mt-1 font-mono text-[11px] text-muted">— {site.name}</figcaption>
+          );
+        })}
+      </ul>
+      <figure className="rounded-xl border border-white/10 bg-[#0b1a2e]/85 px-4 pb-3 pt-2 backdrop-blur-md">
+        <div aria-hidden="true" className="font-heading text-[2.6rem] font-extrabold leading-[0.9] text-accent">&ldquo;</div>
+        <blockquote className="font-heading -mt-2 text-[1rem] font-semibold leading-snug text-primary">{site.quote}</blockquote>
+        <figcaption className="mt-2 text-xs text-secondary">
+          <span aria-hidden="true" className="mr-2 inline-block w-6 border-t border-secondary align-middle" />
+          {site.name}
+        </figcaption>
       </figure>
     </div>
   );
