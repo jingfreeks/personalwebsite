@@ -8,7 +8,7 @@ export default function JsonLd() {
     name: site.fullName,
     alternateName: site.name,
     url: site.url,
-    image: `${site.url}/assets/hero/workspace-mobile.jpg`,
+    image: `${site.url}/assets/hero/lyndell-dobluis-software-developer.jpg`,
     jobTitle: "Software Developer",
     description: site.intro,
     email: `mailto:${site.email}`,
@@ -39,7 +39,8 @@ export default function JsonLd() {
     applicationCategory: "BusinessApplication",
     description: p.description,
     author: { "@id": `${site.url}/#person` },
-    ...(p.href ? { url: p.href } : {}),
+    url: p.caseStudy ? `${site.url}/projects/${p.slug}` : p.href ?? `${site.url}/projects#${p.slug}`,
+    operatingSystem: "Web",
   }));
   const data = { "@context": "https://schema.org", "@graph": [person, website, page, ...apps] };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;

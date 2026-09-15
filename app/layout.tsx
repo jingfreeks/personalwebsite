@@ -19,13 +19,13 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-const title = `${site.name} — Full Stack Web & Mobile Developer`;
+const title = `${site.name} | Web, Mobile & Business Software Developer`;
 const description =
   "Davao City software developer building web and mobile apps with React, React Native, Next.js and Supabase. Founder of Dells Software. Open to remote work.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: title, template: `%s · ${site.name}` },
+  title: { default: title, template: `%s | ${site.name}` },
   description,
   keywords: [
     "Lyndell Dobluis",
