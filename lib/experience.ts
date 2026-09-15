@@ -7,6 +7,8 @@ export type ExperienceEntry = {
   summary?: boolean;
 };
 
+// Source: Lyndell's resume (roles, month-level dates and responsibilities) and
+// the Dells Software repositories for the current role.
 export const experience: ExperienceEntry[] = [
   {
     dates: "2024 — Present",
@@ -14,21 +16,61 @@ export const experience: ExperienceEntry[] = [
     company: "Dells Software",
     location: "Davao City · Remote",
     description:
-      "Building business systems for Filipino small retailers — Tindahan POS, Inventory and Accounting — and the Dells Farm web platform.",
+      "Building business systems for Filipino small retailers — Tindahan POS, Inventory Management and Accounting — plus the Dells Farm web platform, on React, Vite, Expo and Supabase.",
   },
-  { dates: "2024", title: "Lead Developer", company: "MyShed Company", location: "Davao City" },
-  { dates: "2022 — 2023", title: "Software Engineer", company: "Fixlers Company", location: "Spring Valley, NY" },
-  { dates: "2022", title: "App Developer", company: "AKLaunch Co.", location: "Passaic, NJ" },
-  { dates: "2020 — 2022", title: "Software Engineer", company: "Yondu Inc.", location: "Taguig City" },
-  { dates: "2020", title: "React Native Developer", company: "Al Wasim Information Technology", location: "Riyadh, Saudi Arabia" },
-  { dates: "2019 — 2020", title: "Associate Web Developer", company: "Fligno Softwares Inc.", location: "Cagayan de Oro City" },
-  { dates: "2018 — 2019", title: "System Developer", company: "PRL BPO Technology", location: "Davao City" },
-  { dates: "2017 — 2018", title: "IT Head / Backend Developer", company: "BinhiMedfi Inc.", location: "Cagayan de Oro City" },
-  { dates: "2016 — 2017", title: "SEO Specialist", company: "Thinklogic Marketing Inc.", location: "Cagayan de Oro City" },
   {
-    dates: "2008 — 2016",
-    title: "Programmer & web developer roles in the Philippines and Saudi Arabia",
-    company: "Syntactics, Sadeem/Al-Harafi, oDesk",
+    dates: "Jan 2024 — Jul 2024",
+    title: "Lead Developer",
+    company: "MyShed Company",
+    location: "Davao City",
+    description:
+      "Led web application development in React with Context API and React Query and a shared UI library; designed MySQL structures, defined REST API contracts with backend engineers, and oversaw unit testing and coverage with Jest.",
+  },
+  {
+    dates: "Dec 2022 — Jul 2023",
+    title: "Software Engineer",
+    company: "Fixlers Company",
+    location: "Spring Valley, NY · Remote",
+    description:
+      "Built and maintained React Native features — reusable components, navigation flows and Redux state — for a US client; coordinated endpoint design and verification with backend developers.",
+  },
+  {
+    dates: "Feb 2022 — Nov 2022",
+    title: "App Developer",
+    company: "AK Launch Co.",
+    location: "Passaic, NJ · Remote",
+    description:
+      "Cross-platform React Native features released on Android and iOS; set up Firebase push notifications and phone authentication for a US-based engineering team.",
+  },
+  {
+    dates: "Nov 2020 — Mar 2022",
+    title: "Software Engineer",
+    company: "Yondu Inc.",
+    location: "Taguig City",
+    description:
+      "Developed a mobile banking application in an Agile team, contributing core features with secure, reliable delivery. Recognized as a 2021 Team Awardee.",
+  },
+  {
+    dates: "May 2020 — Nov 2020",
+    title: "React Native Developer",
+    company: "Al Wasim Information Technology",
+    location: "Riyadh, Saudi Arabia",
+    description:
+      "React Native features for enterprise clients in the Saudi market; Firebase phone authentication and push notifications, plus real-time features with Socket.io and WebRTC (Agora.io).",
+  },
+  {
+    dates: "Aug 2017 — Oct 2018",
+    title: "IT Head / Backend Developer",
+    company: "BinhiMedfi Inc.",
+    location: "Cagayan de Oro City",
+    description:
+      "Led the company's IT function — backend systems, infrastructure, vendor coordination and day-to-day operations.",
+  },
+  {
+    dates: "2008 — 2020",
+    title:
+      "Earlier roles: Associate Web Developer at Fligno Softwares (2019–2020), System Developer at PRL BPO (2018–2019), SEO Specialist at Thinklogic (2016–2017), Computer Programmer at Sadeem Harafi, Saudi Arabia (2012–2016), Freelance SEO Contractor on oDesk (2010–2012), and Junior Programmer at Syntactics (2008–2012, 2009 Employee of the Year).",
+    company: "",
     location: "",
     summary: true,
   },

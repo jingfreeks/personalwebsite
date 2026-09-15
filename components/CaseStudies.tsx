@@ -5,12 +5,12 @@ import Reveal from "@/components/Reveal";
 export default function CaseStudies() {
   return (
     <Reveal>
-      <section id="case-studies" className="mb-16">
+      <section id="case-studies" className="mb-4 pt-6">
         <div className="mb-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-light">
           Client work
         </div>
-        <h2 className="font-heading mb-1.5 text-3xl font-bold sm:text-4xl">
-          Case Studies
+        <h2 className="font-heading mb-1.5 text-2xl font-bold sm:text-3xl">
+          Client Work
         </h2>
         <p className="mb-[18px] text-[13px] text-muted">
           Selected client builds — problem, what I built, and the result.

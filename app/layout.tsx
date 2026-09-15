@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import { site } from "@/lib/site";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,8 +22,9 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: `${site.name} — ${site.role}`,
+  title: { default: `${site.name} — ${site.role}`, template: `%s · ${site.name}` },
   description,
+  alternates: { canonical: "/" },
   openGraph: {
     title: `${site.name} — ${site.role}`,
     description,
@@ -30,11 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
   },
-  twitter: {
-    card: "summary",
-    title: `${site.name} — ${site.role}`,
-    description,
-  },
+  twitter: { card: "summary", title: `${site.name} — ${site.role}`, description },
 };
 
 export default function RootLayout({
@@ -44,7 +43,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${plexMono.variable} h-full`}>
-      <body className="min-h-full font-sans antialiased">{children}</body>
+      <body className="min-h-full font-sans antialiased">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

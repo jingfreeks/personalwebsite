@@ -5,69 +5,61 @@ export type Project = {
   category: string;
   name: string;
   description: string;
-  highlights?: string[];
   tech: string[];
   icon: ProjectIcon;
   status: string;
-  image?: { src: string; alt: string; width: number; height: number };
+  image: { src: string; alt: string };
   href?: string;
   hrefLabel?: string;
 };
 
-// Descriptions are taken from each project's own repository and documentation.
+// Facts come from each project's own repository, documentation and live site.
+// Previews are real captures of the applications.
 export const projects: Project[] = [
   {
     slug: "tindahan-pos",
-    category: "POS & Inventory",
+    category: "POS & Inventory System",
     name: "Tindahan POS",
     description:
-      "Point-of-sale and inventory system for Philippine sari-sari stores and small retailers, including customer credit (utang) management. Multi-tenant SaaS: a web app plus a companion mobile app on a shared Supabase backend, with a platform console for plans, module entitlements, MFA and audit.",
-    highlights: [
-      "v0.9.0 released to production — Sept 2026",
-      "Technical documentation prepared for BIR accreditation",
-      "1,089 web + 281 mobile automated tests, 35 pgTAP suites",
-      "Staff roles, shift X/Z readings, receipts, reports, daily backups",
-    ],
-    tech: ["React", "TypeScript", "Vite", "React Native", "Expo", "Supabase", "PostgreSQL", "Playwright"],
+      "A modern POS and inventory system built for Filipino small businesses — sales, stock, customer credit (utang), staff roles and reports. Web app plus companion mobile app; v0.9.0 in production, documented for BIR accreditation.",
+    tech: ["React", "TypeScript", "Vite", "React Native", "Supabase"],
     icon: "pos",
-    status: "Alpha · in production",
-    image: {
-      src: "/assets/projects/tindahan-pos-dashboard.jpg",
-      alt: "Tindahan POS admin dashboard showing sales, low-stock alerts and customer credit",
-      width: 1200,
-      height: 750,
-    },
+    status: "In production",
+    image: { src: "/assets/projects/tindahan-pos-dashboard.jpg", alt: "Tindahan POS admin dashboard with sales, low-stock alerts and customer credit" },
   },
   {
     slug: "inventory-management",
-    category: "Warehouse & Stock",
+    category: "Warehouse & Stock Tracking",
     name: "Inventory Management",
     description:
-      "Stock-tracking application for stores on the Dells platform — products, categories, receiving and low-stock visibility — sharing one Supabase backend and a common design system with Tindahan POS. Web app plus a companion mobile app.",
-    tech: ["React", "TypeScript", "Vite", "React Native", "Expo", "Supabase", "Tailwind CSS"],
+      "Stock, orders and deliveries for your business — an inventory app for stores on the Dells platform, sharing one Supabase backend and a common design system with Tindahan POS. Web app plus companion mobile app.",
+    tech: ["React", "Vite", "TypeScript", "Supabase"],
     icon: "inventory",
     status: "Platform module",
+    image: { src: "/assets/projects/inventory-app.jpg", alt: "Inventory Management sign-in screen — stock, orders and deliveries" },
   },
   {
     slug: "accounting-system",
-    category: "Business Finance",
+    category: "Business Finance Management",
     name: "Accounting System",
     description:
-      "Business finance module for the Dells platform, designed to work from Tindahan POS sales data. Architecture and the first database migrations have shipped; the module is actively in development.",
-    tech: ["React", "TypeScript", "Vite", "React Native", "Expo", "Supabase", "PostgreSQL"],
+      "A simple and powerful accounting system integrated with Tindahan POS — profit and loss, balance sheet, cash flow, receivables and payables from your day-to-day selling. Actively in development.",
+    tech: ["React", "TypeScript", "PostgreSQL", "Supabase"],
     icon: "accounting",
     status: "In development",
+    image: { src: "/assets/projects/accounting.jpg", alt: "Accounting system intro screen — Know exactly where your money went" },
   },
   {
     slug: "dells-farm",
-    category: "Farm & Agri-business",
+    category: "Poultry, Livestock & Farm",
     name: "Dells Farm",
     description:
-      "Web presence and ordering platform for a family farm in Saloy, Davao City raising free-range chickens, ducks and goats, with a stocked fish pond. A marketing site for orders and farm visits, plus a Next.js storefront with cart, checkout and an admin panel for products, orders and customers.",
-    tech: ["Next.js", "React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "Tailwind CSS"],
+      "Web presence and online ordering for a family farm in Saloy, Davao City — free-range chickens, ducks, goats, fresh eggs and pond fish — with a Next.js storefront, cart, checkout and an admin panel for products, orders and customers.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     icon: "farm",
     status: "Live",
+    image: { src: "/assets/projects/dells-farm.jpg", alt: "Dells Farm website — From family farm to family table" },
     href: "https://dells-farm-site.vercel.app",
-    hrefLabel: "Visit site",
+    hrefLabel: "View Project",
   },
 ];

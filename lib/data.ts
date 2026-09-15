@@ -1,30 +1,3 @@
-export const services = [
-  {
-    name: "React Native App Builds",
-    scope:
-      "Cross-platform iOS/Android apps, MVP to production, including App Store & Play Store release.",
-    timeline: "6–10 weeks",
-  },
-  {
-    name: "Web App Development (React)",
-    scope:
-      "Fullstack React web apps — client dashboards and internal tools, wired to your existing backend or built from scratch.",
-    timeline: "4–8 weeks",
-  },
-  {
-    name: "Firebase & Real-Time Backend Integration",
-    scope:
-      "Auth, REST API integration, and real-time features (WebRTC/Socket.io) wired into an existing or new app.",
-    timeline: "2–4 weeks",
-  },
-  {
-    name: "Fractional Senior Engineer",
-    scope:
-      "Ongoing or retainer support — code review, leading dev efforts, and AI-assisted delivery, collaborating directly with your team across time zones.",
-    timeline: "Ongoing",
-  },
-];
-
 export const caseStudies = [
   {
     company: "Fixlers Company",
@@ -65,20 +38,4 @@ export const caseStudies = [
     tech: ["React Native", "Localization"],
     src: "/assets/apps/alwasim.jpg",
   },
-];
-
-type RecognitionEntry = {
-  year: string;
-  text: string;
-  link?: string;
-};
-
-export const recognition: RecognitionEntry[] = [
-  { year: '2009', text: 'Employee of the Year — Syntactics Inc.' },
-  {
-    year: '2015',
-    text: 'Certificate of Appreciation for Outstanding Performance — Sadeem / Al-Harafi Co.',
-    link: '/assets/certs/sadeem-appreciation.jpg',
-  },
-  { year: '2021', text: 'Team Awardee — Yondu Inc.' },
 ];
