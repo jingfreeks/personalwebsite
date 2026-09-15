@@ -19,21 +19,21 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const p = projectBySlug(slug);
   if (!p?.caseStudy) return {};
-  const title = `${p.name} — ${p.category}`;
+  const title = p.caseStudy.seoTitle ?? `${p.name} — ${p.category}`;
   const combined = `${p.summary} ${p.caseStudy.tagline}`;
-  const description = combined.length <= 160 ? combined : p.summary;
+  const description = p.caseStudy.seoDescription ?? (combined.length <= 160 ? combined : p.summary);
   return {
     title,
     description,
     alternates: { canonical: `/projects/${p.slug}` },
     openGraph: {
       title: `${title} | ${site.name}`,
-      description: p.summary,
+      description,
       url: `${site.url}/projects/${p.slug}`,
       type: "article",
       images: [{ url: p.image.src, alt: p.image.alt }],
     },
-    twitter: { card: "summary_large_image", title, description: p.summary, images: [p.image.src] },
+    twitter: { card: "summary_large_image", title, description, images: [p.image.src] },
   };
 }
 
