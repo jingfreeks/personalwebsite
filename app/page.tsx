@@ -1,31 +1,40 @@
-import Sidebar from "@/components/Sidebar";
 import Hero from "@/components/Hero";
-import ProofStrip from "@/components/ProofStrip";
-import Services from "@/components/Services";
-import CaseStudies from "@/components/CaseStudies";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
-import Recognition from "@/components/Recognition";
-import Skills from "@/components/Skills";
+import ProjectGrid from "@/components/ProjectGrid";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
+import SkillsPanel from "@/components/SkillsPanel";
+import FocusCard from "@/components/FocusCard";
+import AboutSection from "@/components/AboutSection";
+import Values from "@/components/Values";
+import ContactCTA from "@/components/ContactCTA";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-page text-primary md:flex-row">
-      <Sidebar />
-      <main className="min-w-0 max-w-[960px] flex-1 px-5 py-10 sm:px-8 md:px-14 md:py-12">
-        <Hero />
-        <ProofStrip />
-        <Services />
-        <CaseStudies />
-        <About />
-        <Experience />
-        <Recognition />
-        <Skills />
-        <Contact />
-        <Footer />
-      </main>
-    </div>
+    <main className="bg-page text-primary">
+      <Hero />
+      <ProjectGrid />
+
+      {/* experience + about | skills/motto, values, CTA */}
+      <div className="mx-auto grid max-w-[64rem] gap-10 px-5 py-12 sm:px-8 lg:max-w-none lg:grid-cols-[38.5%_1fr] lg:gap-x-6 lg:gap-y-8 lg:px-[3%] [&>*]:min-w-0">
+        <div className="flex flex-col gap-10">
+          <ExperienceTimeline />
+          <AboutSection />
+        </div>
+        <div className="flex flex-col gap-4">
+          <div className="grid gap-4 lg:grid-cols-[1fr_35%] [&>*]:min-w-0">
+            <SkillsPanel />
+            <FocusCard />
+          </div>
+          <Values />
+          <ContactCTA />
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-[64rem] px-5 pb-14 sm:px-8 lg:max-w-none lg:px-[3%]">
+        <div className="rounded-2xl border border-white/10 bg-[#0b1a2e]/80 p-5 sm:p-8">
+          <Contact />
+        </div>
+      </div>
+    </main>
   );
 }

@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { Fjalla_One, Nunito, IBM_Plex_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, IBM_Plex_Mono } from "next/font/google";
+import { site } from "@/lib/site";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
-const fjallaOne = Fjalla_One({
-  variable: "--font-fjalla-one",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["400"],
-});
-
-const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const plexMono = IBM_Plex_Mono({
@@ -20,10 +17,23 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
+const description =
+  "Software developer building modern, scalable web and mobile solutions — React, React Native, Next.js and Supabase — and founder of Dells Software, maker of Tindahan POS.";
+
 export const metadata: Metadata = {
-  title: "Lyndell T. Dobluis — Software Developer",
-  description:
-    "Software engineer with 15+ years of experience across web and mobile development, specializing in React Native applications for cross-platform iOS/Android delivery.",
+  metadataBase: new URL(site.url),
+  title: { default: `${site.name} — ${site.role}`, template: `%s · ${site.name}` },
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: `${site.name} — ${site.role}`,
+    description,
+    url: site.url,
+    siteName: site.name,
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: { card: "summary", title: `${site.name} — ${site.role}`, description },
 };
 
 export default function RootLayout({
@@ -32,11 +42,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${fjallaOne.variable} ${nunito.variable} ${plexMono.variable} h-full`}
-    >
-      <body className="min-h-full font-sans antialiased">{children}</body>
+    <html lang="en" className={`${jakarta.variable} ${plexMono.variable} h-full`}>
+      <body className="min-h-full font-sans antialiased">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

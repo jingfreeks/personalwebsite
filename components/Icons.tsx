@@ -1,0 +1,111 @@
+import type { SVGProps } from "react";
+
+type IconProps = SVGProps<SVGSVGElement> & { size?: number };
+
+function Base({ size = 18, children, ...rest }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+      {...rest}
+    >
+      {children}
+    </svg>
+  );
+}
+
+export const ArrowRight = (p: IconProps) => (
+  <Base {...p}><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></Base>
+);
+export const ExternalLink = (p: IconProps) => (
+  <Base {...p}><path d="M14 4h6v6" /><path d="M20 4 10 14" /><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" /></Base>
+);
+export const Menu = (p: IconProps) => (
+  <Base {...p}><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></Base>
+);
+export const Close = (p: IconProps) => (
+  <Base {...p}><path d="M6 6l12 12" /><path d="M18 6 6 18" /></Base>
+);
+export const Check = (p: IconProps) => (
+  <Base {...p}><path d="m5 12 4 4L19 6" /></Base>
+);
+export const Send = (p: IconProps) => (
+  <Base {...p}><path d="M21 3 3 10l8 3 3 8 7-18Z" /><path d="m11 13 10-10" /></Base>
+);
+export const Mail = (p: IconProps) => (
+  <Base {...p}><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></Base>
+);
+export const Bulb = (p: IconProps) => (
+  <Base {...p}><path d="M9 18h6" /><path d="M10 21h4" /><path d="M8 13a5 5 0 1 1 8 0c-1 1-1.5 2-1.5 3h-5c0-1-.5-2-1.5-3Z" /></Base>
+);
+export const Book = (p: IconProps) => (
+  <Base {...p}><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z" /><path d="M4 19a2 2 0 0 1 2-2h13" /></Base>
+);
+export const Target = (p: IconProps) => (
+  <Base {...p}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1" /></Base>
+);
+export const Layers = (p: IconProps) => (
+  <Base {...p}><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="m3 13 9 5 9-5" /></Base>
+);
+
+export const Calendar = (p: IconProps) => (
+  <Base {...p}><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 10h18" /><path d="M8 3v4" /><path d="M16 3v4" /></Base>
+);
+export const Users = (p: IconProps) => (
+  <Base {...p}><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20c0-3.5 3-6 6.5-6s6.5 2.5 6.5 6" /><circle cx="17" cy="9" r="2.5" /><path d="M21.5 19c0-2.6-2-4.6-4.5-4.6" /></Base>
+);
+export const Globe = (p: IconProps) => (
+  <Base {...p}><circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3c3 3.5 3 14.5 0 18" /><path d="M12 3c-3 3.5-3 14.5 0 18" /></Base>
+);
+export const Shield = (p: IconProps) => (
+  <Base {...p}><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z" /><path d="m9 12 2 2 4-4" /></Base>
+);
+export const Pin = (p: IconProps) => (
+  <Base {...p}><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></Base>
+);
+export const Download = (p: IconProps) => (
+  <Base {...p}><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M4 21h16" /></Base>
+);
+export const Code = (p: IconProps) => (
+  <Base {...p}><path d="m8 8-4 4 4 4" /><path d="m16 8 4 4-4 4" /><path d="m14 5-4 14" /></Base>
+);
+
+/* Project category marks */
+export const PosIcon = (p: IconProps) => (
+  <Base {...p}><rect x="4" y="3" width="16" height="18" rx="2" /><path d="M8 8h8" /><path d="M8 12h8" /><path d="M8 16h5" /></Base>
+);
+export const InventoryIcon = (p: IconProps) => (
+  <Base {...p}><path d="M3 9h18v11H3z" /><path d="M3 9l2-5h14l2 5" /><path d="M10 13h4" /></Base>
+);
+export const AccountingIcon = (p: IconProps) => (
+  <Base {...p}><rect x="5" y="3" width="14" height="18" rx="2" /><path d="M8 7h8" /><path d="M8 11h2" /><path d="M14 11h2" /><path d="M8 15h2" /><path d="M14 15h2" /></Base>
+);
+export const FarmIcon = (p: IconProps) => (
+  <Base {...p}><path d="M12 21c-4 0-7-3-7-7 0-4 4-8 7-11 3 3 7 7 7 11 0 4-3 7-7 7Z" /><path d="M12 21v-8" /><path d="m9 13 3-2 3 2" /></Base>
+);
+
+/* Brand / social marks rendered from static CC0 SVGs via CSS mask (tinted with currentColor) */
+export function BrandIcon({ slug, size = 18, className = "" }: { slug: string; size?: number; className?: string }) {
+  const url = `url(/icons/${slug}.svg)`;
+  return (
+    <span
+      aria-hidden="true"
+      className={`icon-mask ${className}`}
+      style={{ width: size, height: size, WebkitMaskImage: url, maskImage: url }}
+    />
+  );
+}
+
+export function SocialMark({ kind }: { kind: "linkedin" | "github" | "email" | "website" }) {
+  if (kind === "email") return <Mail size={16} />;
+  if (kind === "website") return <Globe size={16} />;
+  return <BrandIcon slug={kind === "github" ? "github" : "linkedin"} size={16} />;
+}

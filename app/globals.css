@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
+/* Design tokens — Software Developer Command Center.
+   All component colors come from here. */
 @theme inline {
-  --font-sans: var(--font-nunito);
+  --font-sans: var(--font-jakarta);
   --font-mono: var(--font-plex-mono);
 
-  --color-page: #0a1118;
-  --color-sidebar: #080e15;
-  --color-panel: #0f1821;
-  --color-divider: #1f2b38;
-  --color-input-border: #263444;
+  /* backgrounds & surfaces */
+  --color-page: #030a12;
+  --color-sidebar: #071522;
+  --color-panel: #0a1726;
+  --color-surface: #0d1d30;
+  --color-divider: #1d3b58;
+  --color-input-border: #1d3b58;
 
-  --color-primary: #eef2f7;
-  --color-secondary: #9fb0c4;
-  --color-muted: #6c7d92;
-  --color-muted2: #8798ac;
+  /* text */
+  --color-primary: #f5f8fc;
+  --color-secondary: #b7c6d8;
+  --color-body: #b7c6d8;
+  --color-muted: #93a7bd;
+  --color-muted2: #a6b8cc;
+  --color-footer: #7c8ba3;
+  --color-tag: #c3d0df;
 
-  --color-accent: #4c6e93;
-  --color-accent-light: #7fa0c4;
-  --color-link: #7fa0c4;
-  --color-tag: #9fb0c4;
-  --color-body: #b7c3d1;
-  --color-footer: #55647a;
+  /* brand */
+  --color-accent: #1683ff;
+  --color-accent-strong: #0f6fe0;
+  --color-accent-light: #4da3ff;
+  --color-link: #6fb3ff;
+  --color-cyan: #22d8ff;
+  --color-purple: #925cff;
+  --color-green: #36d696;
+  --color-red: #ff4d72;
+  --color-success: #36d696;
+}
+
+html {
+  scroll-padding-top: 5.25rem;
+}
+
+/* The design is a fixed 1024px composition. Above lg the root font-size grows
+   with the viewport (16px @1024 → 25px @1600) so rem-based layout scales like
+   the design image does when the window is expanded. */
+@media (min-width: 1024px) {
+  html {
+    font-size: clamp(16px, 1.5625vw, 30px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -30,7 +61,83 @@ body {
 
 @layer utilities {
   .font-heading {
-    font-family: var(--font-fjalla-one), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .glass {
+    background: color-mix(in srgb, var(--color-panel) 78%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-divider) 80%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .glass-strong {
+    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    border: 1px solid var(--color-divider);
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(34, 216, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 216, 255, 0.05) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+  .card-glow {
+    transition:
+      translate 0.25s ease,
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  .card-glow:hover {
+    border-color: rgba(22, 131, 255, 0.6);
+    box-shadow:
+      0 0 0 1px rgba(22, 131, 255, 0.25),
+      0 24px 60px -24px rgba(22, 131, 255, 0.55);
+  }
+  .glow-blue {
+    box-shadow:
+      0 0 0 1px rgba(22, 131, 255, 0.18),
+      0 20px 60px -20px rgba(22, 131, 255, 0.45);
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, #4da3ff 0%, #1683ff 55%, #22d8ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .neon {
+    color: #9be7ff;
+    text-shadow:
+      0 0 6px rgba(34, 216, 255, 0.9),
+      0 0 18px rgba(22, 131, 255, 0.7);
+  }
+  .fade-bottom {
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  }
+  .icon-mask {
+    display: inline-block;
+    background-color: currentColor;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
+  .timeline-line {
+    background: linear-gradient(to bottom, rgba(22, 131, 255, 0.9), rgba(34, 216, 255, 0.35), rgba(22, 131, 255, 0.08));
+    box-shadow: 0 0 12px rgba(22, 131, 255, 0.45);
+  }
+  .monitor {
+    background: #061120;
+    border: 1px solid var(--color-divider);
+    border-radius: 10px;
+    box-shadow:
+      0 0 0 1px rgba(22, 131, 255, 0.15),
+      0 18px 40px -18px rgba(22, 131, 255, 0.55);
   }
 }
 
@@ -38,12 +145,8 @@ a.plain {
   text-decoration: none;
 }
 
-a.plain:hover {
-  color: var(--color-link);
-}
-
 ::selection {
-  background: rgba(76, 110, 147, 0.35);
+  background: rgba(22, 131, 255, 0.35);
 }
 
 :focus-visible {
@@ -58,7 +161,7 @@ a.plain:hover {
     transform: scale(1);
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.45;
     transform: scale(0.85);
   }
 }
@@ -67,25 +170,12 @@ a.plain:hover {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(10px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .status-dot {
     animation: none;
   }
-  .reveal {
-    opacity: 1;
+  .card-glow,
+  .card-glow:hover {
     transform: none;
     transition: none;
   }
