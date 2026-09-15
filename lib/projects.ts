@@ -24,6 +24,10 @@ export type Project = {
 };
 
 export type CaseStudy = {
+  /** optional search-result title (kept under ~40 chars; " | Lyndell Dobluis" is appended) */
+  seoTitle?: string;
+  /** optional meta description (50–160 chars) */
+  seoDescription?: string;
   tagline: string;
   problem: string[];
   solution: string[];
@@ -55,7 +59,10 @@ export const projects: Project[] = [
     overview:
       "A cloud-based point-of-sale and inventory system for Filipino sari-sari stores and small retailers. Store owners record sales, track stock and low-stock alerts, manage customer credit (utang), give staff their own roles, and read daily reports — from a web app at the counter and a companion mobile app.",
     caseStudy: {
-      tagline: "Point of sale, inventory and customer credit for Filipino small retailers.",
+      seoTitle: "Tindahan POS: Sari-Sari Store POS System",
+      seoDescription:
+        "Tindahan POS is a POS system for sari-sari stores and small retailers in the Philippines, with sales, inventory and utang (customer credit) tracking.",
+      tagline: "A POS system for sari-sari stores: sales, inventory and utang tracking.",
       problem: [
         "Most sari-sari stores and small retailers in the Philippines still run on notebooks: sales are added up by hand, customer credit (utang) is written in a ledger, and nobody knows how much stock is left until it runs out.",
         "Existing POS products are priced and designed for larger shops, assume a full-time cashier, and rarely handle utang — the credit relationship that keeps a neighbourhood store running.",

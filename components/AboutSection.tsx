@@ -12,7 +12,7 @@ export default function AboutSection() {
       </div>
       <div className="space-y-3 text-[0.8rem] leading-relaxed text-primary/85">
         <p>
-          Hi, I&apos;m <strong className="font-semibold text-primary">{site.name}</strong>, a software developer based in the
+          Hi, I&apos;m <strong className="font-semibold text-primary">{site.name}</strong>, a React &amp; React Native developer based in Davao City,
           Philippines. I love building practical and modern solutions that help businesses grow. I&apos;m the founder of{" "}
           <strong className="font-semibold text-primary">Dells Software</strong>, where we create systems like Tindahan POS,
           Inventory Management, Accounting System, and Farm Management. I also run a small sari-sari store, and I use AI
