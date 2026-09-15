@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Project, ProjectIcon } from "@/lib/projects";
 import { AccountingIcon, ArrowRight, FarmIcon, InventoryIcon, PosIcon } from "@/components/Icons";
 
@@ -47,7 +48,6 @@ function Laptop({ project }: { project: Project }) {
 
 export default function ProjectCard({ project }: { project: Project }) {
   const Icon = icons[project.icon];
-  const external = !!project.href;
   return (
     <article
       id={`project-${project.slug}`}
@@ -79,14 +79,21 @@ export default function ProjectCard({ project }: { project: Project }) {
       </ul>
 
       <div className="mt-auto pt-3.5">
-        <a
-          href={project.href ?? "#contact"}
-          target={external ? "_blank" : undefined}
-          rel={external ? "noopener noreferrer" : undefined}
-          className="plain inline-flex items-center gap-2 whitespace-nowrap text-[0.85rem] font-semibold text-link transition-colors hover:text-accent-light"
-        >
-          {external ? (project.hrefLabel ?? "View Project") : "Request a demo"} <ArrowRight className="h-4 w-4" />
-        </a>
+        {project.caseStudy ? (
+          <Link
+            href={`/projects/${project.slug}`}
+            className="plain inline-flex items-center gap-2 whitespace-nowrap text-[0.85rem] font-semibold text-link transition-colors hover:text-accent-light"
+          >
+            View Project <ArrowRight className="h-4 w-4" />
+          </Link>
+        ) : (
+          <a
+            href="#contact"
+            className="plain inline-flex items-center gap-2 whitespace-nowrap text-[0.85rem] font-semibold text-link transition-colors hover:text-accent-light"
+          >
+            Request a demo <ArrowRight className="h-4 w-4" />
+          </a>
+        )}
       </div>
     </article>
   );

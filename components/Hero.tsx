@@ -15,7 +15,7 @@ export default function Hero() {
     <section id="home" aria-labelledby="hero-heading" className="relative overflow-hidden bg-[#020811] lg:-mt-14 lg:aspect-[1024/500]">
       {/* ── lg+: full-bleed workspace scene (design image with its baked-in UI erased) ── */}
       <div className="pointer-events-none absolute inset-0 hidden lg:block">
-        <Image src="/assets/hero/workspace.jpg" alt={`${site.fullName}, software developer, at his desk with code on the monitors behind him`} fill priority sizes="100vw" className="object-cover object-top" />
+        <Image src="/assets/hero/lyndell-dobluis-workspace.jpg" alt={`${site.fullName}, software developer, at his desk with code on the monitors behind him`} fill priority sizes="100vw" className="object-cover object-top" />
         {/* light readability gradient behind the copy */}
         <div className="absolute inset-y-0 left-0 w-[46%] bg-gradient-to-r from-[#020811]/70 via-[#020811]/35 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-[10%] bg-gradient-to-t from-[#020811]/80 to-transparent" />
@@ -33,8 +33,8 @@ export default function Hero() {
               <span className="block">
                 {site.firstName} <span className="text-accent">{site.lastName}</span>
               </span>
+              <span className="mt-1 block text-2xl font-semibold leading-tight tracking-normal text-primary lg:text-[1.4rem]">{site.role}</span>
             </h1>
-            <p className="font-heading mt-1 text-2xl font-semibold text-primary lg:text-[1.4rem]">{site.role}</p>
             <p className="mt-3 max-w-[48ch] text-[0.9375rem] leading-relaxed text-primary/90 lg:max-w-[22rem] lg:text-[0.9rem] lg:leading-[1.4]">{site.intro}</p>
 
             <div className="mt-4 flex flex-wrap gap-3">
@@ -83,7 +83,7 @@ export default function Hero() {
           {/* ── below lg: scene card ─────────────────────────────────────── */}
           <div className="relative overflow-hidden rounded-3xl border border-divider/70 glow-blue lg:hidden">
             <Image
-              src="/assets/hero/workspace-mobile.jpg"
+              src="/assets/hero/lyndell-dobluis-software-developer.jpg"
               alt={`${site.fullName} at a desk with code on the monitors behind`}
               width={440}
               height={384}

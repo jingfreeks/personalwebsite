@@ -45,7 +45,8 @@ export default function Header() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const isActive = (id: string) => (pathname === "/blog" ? id === "blog" : id === active);
+  const routeSection = pathname.startsWith("/blog") ? "blog" : pathname.startsWith("/projects") ? "projects" : null;
+  const isActive = (id: string) => (routeSection ? id === routeSection : id === active);
 
   return (
     <header

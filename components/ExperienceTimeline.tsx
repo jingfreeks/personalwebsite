@@ -1,4 +1,4 @@
-import { timeline } from "@/lib/experience";
+import { experience, timeline } from "@/lib/experience";
 import { site } from "@/lib/site";
 import { ArrowRight } from "@/components/Icons";
 
@@ -29,6 +29,30 @@ export default function ExperienceTimeline() {
           </li>
         ))}
       </ol>
+      <details className="group mt-5 rounded-xl border border-white/10 bg-[#0b1a2e]/70">
+        <summary className="cursor-pointer list-none px-4 py-3 text-[0.8rem] font-semibold text-link marker:content-none hover:text-accent-light">
+          <span className="group-open:hidden">Show full work history (12 companies)</span>
+          <span className="hidden group-open:inline">Hide full work history</span>
+        </summary>
+        <ol className="space-y-4 border-t border-white/10 px-4 py-4">
+          {experience.map((job) => (
+            <li key={`${job.company}-${job.dates}`}>
+              <div className="text-[0.72rem] text-accent-light">{job.dates}</div>
+              {job.summary ? (
+                <p className="mt-0.5 text-[0.78rem] leading-snug text-primary/75">{job.title}</p>
+              ) : (
+                <>
+                  <h3 className="font-heading text-[0.85rem] font-bold text-primary">
+                    {job.title} · {job.company}
+                    {job.location && <span className="font-normal text-primary/60"> — {job.location}</span>}
+                  </h3>
+                  {job.description && <p className="mt-0.5 text-[0.78rem] leading-snug text-primary/75">{job.description}</p>}
+                </>
+              )}
+            </li>
+          ))}
+        </ol>
+      </details>
     </section>
   );
 }

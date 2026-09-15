@@ -134,9 +134,24 @@ try {
   await boot();
   console.log(`SEO check against ${base}\n`);
   const home = await auditPage("/");
-  await auditPage("/blog", { expectIndex: false });
-  const locs = await auditSitemapAndRobots();
-  if (home) console.log(`  title: ${home.title}\n  description (${home.desc.length}): ${home.desc}\n  sitemap: ${locs?.length ?? 0} URL(s)\n`);
+  const locs = (await auditSitemapAndRobots()) ?? [];
+  // every indexable page in the sitemap gets the full on-page audit, and titles/descriptions must be unique
+  const seen = { title: new Map(), desc: new Map() };
+  if (home) { seen.title.set(home.title, "/"); seen.desc.set(home.desc, "/"); }
+  for (const loc of locs) {
+    const path = loc.replace(/^https?:\/\/[^/]+/, "") || "/";
+    if (path === "/") continue;
+    const r = await auditPage(path);
+    if (!r) continue;
+    for (const k of ["title", "desc"]) {
+      if (seen[k].has(r[k])) fail(`${path}: duplicate ${k === "desc" ? "meta description" : "title"} (same as ${seen[k].get(r[k])})`);
+      seen[k].set(r[k], path);
+    }
+  }
+  if (!locs.some((l) => l.replace(/\/$/, "").endsWith("/blog"))) await auditPage("/blog", { expectIndex: false });
+  const nf = await fetch(base + "/this-page-does-not-exist");
+  if (nf.status !== 404) fail(`unknown URL returns HTTP ${nf.status} instead of 404`);
+  if (home) console.log(`  title: ${home.title}\n  description (${home.desc.length}): ${home.desc}\n  sitemap: ${locs.length} URL(s), all audited\n`);
 } catch (e) {
   fail(e.message);
 } finally {
