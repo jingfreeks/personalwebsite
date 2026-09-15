@@ -43,6 +43,7 @@ export const metadata: Metadata = {
   authors: [{ name: site.fullName, url: site.url }],
   creator: site.fullName,
   alternates: { canonical: "/" },
+  verification: { google: "5mJEdBa48RrahZ6DPR6n7cMVcPwPHq8uib6IqVCEi08" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
     title,
