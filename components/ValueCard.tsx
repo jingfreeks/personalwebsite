@@ -1,15 +1,10 @@
 import { Book, Bulb, Target } from "@/components/Icons";
 
 const icons = { bulb: Bulb, book: Book, target: Target } as const;
-const accents = {
-  blue: "border-accent/40 bg-accent/12 text-accent-light",
-  cyan: "border-green/40 bg-green/12 text-green",
-  red: "border-red/40 bg-red/12 text-red",
-} as const;
-const glows = {
-  blue: "border-accent/30 hover:border-accent/60",
-  cyan: "border-green/30 hover:border-green/60",
-  red: "border-red/30 hover:border-red/60",
+const styles = {
+  blue: { card: "border-accent/60 bg-[#08182c]/90", icon: "text-accent-light" },
+  cyan: { card: "border-green/50 bg-[#071a1a]/90", icon: "text-green" },
+  red: { card: "border-red/50 bg-[#1a0a14]/90", icon: "text-red" },
 } as const;
 
 export default function ValueCard({
@@ -19,18 +14,17 @@ export default function ValueCard({
   text,
 }: {
   icon: keyof typeof icons;
-  accent: keyof typeof accents;
+  accent: keyof typeof styles;
   title: string;
   text: string;
 }) {
   const Icon = icons[icon];
+  const s = styles[accent];
   return (
-    <div className={`glass card-glow rounded-2xl p-5 ${glows[accent]}`}>
-      <span className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl border ${accents[accent]}`}>
-        <Icon size={22} />
-      </span>
-      <h3 className="font-heading text-lg font-semibold text-primary">{title}</h3>
-      <p className="mt-1.5 text-sm leading-relaxed text-body">{text}</p>
+    <div className={`rounded-xl border p-4 ${s.card}`}>
+      <Icon className={`h-7 w-7 ${s.icon}`} />
+      <h3 className="font-heading mt-3 text-[0.95rem] font-bold text-primary">{title}</h3>
+      <p className="mt-1 text-[0.78rem] leading-snug text-primary/80">{text}</p>
     </div>
   );
 }
