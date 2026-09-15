@@ -49,10 +49,10 @@ export const neonSign = "Code · Optimize · Build · Deploy · Repeat";
 // technical documentation (v0.9.0, Sept 2026) for the automated test count.
 export const stats: { value: string; label: string; icon: "calendar" | "layers" | "globe" | "shield" | "pin"; note?: string }[] = [
   { value: "15+", label: "Years Experience", icon: "calendar" },
-  { value: "12", label: "Companies Worked With", icon: "layers" },
+  { value: "12", label: "Companies", icon: "layers" },
   { value: "3", label: "Countries", icon: "globe" },
   { value: "1,370+", label: "Automated Tests", icon: "shield", note: "Tindahan POS v0.9.0" },
-  { value: "Philippines", label: "Open to Remote", icon: "pin" },
+  { value: "PH", label: "Open to Remote", icon: "pin", note: "Davao City · GMT+8" },
 ];
 
 export const values = [

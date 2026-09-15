@@ -17,9 +17,7 @@ export default function Home() {
       <Hero />
       <StatsBar />
       <Reveal><ProjectGrid /></Reveal>
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <CaseStudies />
-      </div>
+      <CaseStudies />
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
         <Reveal><ExperienceTimeline /></Reveal>
         <Reveal><SkillsPanel /></Reveal>

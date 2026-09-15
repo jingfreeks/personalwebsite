@@ -2,6 +2,13 @@ import Image from "next/image";
 import type { Project, ProjectIcon } from "@/lib/projects";
 import { AccountingIcon, ArrowRight, ExternalLink, FarmIcon, InventoryIcon, PosIcon } from "@/components/Icons";
 
+const accents: Record<ProjectIcon, string> = {
+  pos: "border-green/40 bg-green/12 text-green",
+  inventory: "border-purple/40 bg-purple/12 text-purple",
+  accounting: "border-accent/40 bg-accent/12 text-accent-light",
+  farm: "border-green/40 bg-green/12 text-green",
+};
+
 const icons: Record<ProjectIcon, typeof PosIcon> = {
   pos: PosIcon,
   inventory: InventoryIcon,
@@ -14,7 +21,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article id={`project-${project.slug}`} className="glass card-glow group flex flex-col rounded-2xl p-4 hover:-translate-y-0.5 sm:p-5">
       <div className="mb-4 flex items-center gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accent/40 bg-accent/12 text-accent-light">
+        <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${accents[project.icon]}`}>
           <Icon size={20} />
         </span>
         <span className="rounded-full border border-divider bg-page/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.08em] text-secondary">
@@ -23,7 +30,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <h3 className="font-heading text-lg font-semibold text-primary">{project.name}</h3>
-      <p className="mt-1.5 text-sm leading-relaxed text-body">{project.description}</p>
+      <p className="mt-1.5 line-clamp-3 text-sm leading-relaxed text-body">{project.description}</p>
 
       {/* device-framed real preview (laptop + phone), pure CSS frames */}
       <div className="relative mt-4 aspect-[16/10] w-full">
@@ -38,6 +45,9 @@ export default function ProjectCard({ project }: { project: Project }) {
             />
           </div>
         </div>
+        <span className="absolute left-[8%] top-2 z-10 rounded-full border border-divider bg-page/80 px-2 py-0.5 font-mono text-[10px] text-muted backdrop-blur">
+          {project.status}
+        </span>
         <div aria-hidden="true" className="absolute inset-x-0 bottom-[6%] h-[5%] rounded-b-xl border border-divider bg-gradient-to-b from-[#0c1c30] to-[#061120]" />
         <div aria-hidden="true" className="absolute right-[2%] bottom-0 h-[48%] w-[16%] overflow-hidden rounded-[10px] border border-divider bg-[#061120] p-[2px] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)]">
           <div className="relative h-full w-full overflow-hidden rounded-[8px]">
@@ -54,22 +64,21 @@ export default function ProjectCard({ project }: { project: Project }) {
         ))}
       </ul>
 
-      <div className="mt-auto flex items-center justify-between pt-4">
+      <div className="mt-auto pt-4">
         {project.href ? (
           <a
             href={project.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="plain inline-flex items-center gap-2 text-sm font-semibold text-link hover:text-accent-light"
+            className="plain inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-link hover:text-accent-light"
           >
             {project.hrefLabel ?? "View Project"} <ExternalLink size={15} />
           </a>
         ) : (
-          <a href="#contact" className="plain inline-flex items-center gap-2 text-sm font-semibold text-link hover:text-accent-light">
+          <a href="#contact" className="plain inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-link hover:text-accent-light">
             Request a demo <ArrowRight size={15} />
           </a>
         )}
-        <span className="font-mono text-[10px] text-muted">{project.status}</span>
       </div>
     </article>
   );

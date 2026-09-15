@@ -18,10 +18,10 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "tindahan-pos",
-    category: "POS & Inventory System",
+    category: "POS & Inventory",
     name: "Tindahan POS",
     description:
-      "A modern POS and inventory system built for Filipino small businesses — sales, stock, customer credit (utang), staff roles and reports. Web app plus companion mobile app; v0.9.0 in production, documented for BIR accreditation.",
+      "A modern POS and inventory system built for Filipino small businesses — sales, stock, customer credit (utang), staff roles and reports. Web app plus companion mobile app; v0.9.0 in production.",
     tech: ["React", "TypeScript", "Vite", "React Native", "Supabase"],
     icon: "pos",
     status: "In production",
@@ -29,10 +29,10 @@ export const projects: Project[] = [
   },
   {
     slug: "inventory-management",
-    category: "Warehouse & Stock Tracking",
+    category: "Warehouse Management",
     name: "Inventory Management",
     description:
-      "Stock, orders and deliveries for your business — an inventory app for stores on the Dells platform, sharing one Supabase backend and a common design system with Tindahan POS. Web app plus companion mobile app.",
+      "Stock, orders and deliveries for stores on the Dells platform — sharing one Supabase backend and design system with Tindahan POS. Web app plus companion mobile app.",
     tech: ["React", "Vite", "TypeScript", "Supabase"],
     icon: "inventory",
     status: "Platform module",
@@ -40,10 +40,10 @@ export const projects: Project[] = [
   },
   {
     slug: "accounting-system",
-    category: "Business Finance Management",
+    category: "Accounting System",
     name: "Accounting System",
     description:
-      "A simple and powerful accounting system integrated with Tindahan POS — profit and loss, balance sheet, cash flow, receivables and payables from your day-to-day selling. Actively in development.",
+      "A simple and powerful accounting system integrated with Tindahan POS — profit and loss, balance sheet, cash flow, receivables and payables. In development.",
     tech: ["React", "TypeScript", "PostgreSQL", "Supabase"],
     icon: "accounting",
     status: "In development",
@@ -51,10 +51,10 @@ export const projects: Project[] = [
   },
   {
     slug: "dells-farm",
-    category: "Poultry, Livestock & Farm",
+    category: "Poultry & Livestock",
     name: "Dells Farm",
     description:
-      "Web presence and online ordering for a family farm in Saloy, Davao City — free-range chickens, ducks, goats, fresh eggs and pond fish — with a Next.js storefront, cart, checkout and an admin panel for products, orders and customers.",
+      "Website and online ordering for a family farm in Saloy, Davao City — free-range chickens, ducks, goats, eggs and pond fish — with a Next.js storefront and admin panel.",
     tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     icon: "farm",
     status: "Live",

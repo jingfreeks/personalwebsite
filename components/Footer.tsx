@@ -1,6 +1,6 @@
 import { navLinks, site, socials } from "@/lib/site";
 import Link from "next/link";
-import { SocialMark } from "@/components/Icons";
+import { ArrowRight, SocialMark } from "@/components/Icons";
 
 export default function Footer() {
   return (
@@ -41,9 +41,12 @@ export default function Footer() {
         </ul>
       </div>
       <div className="border-t border-divider/60">
-        <p className="mx-auto max-w-6xl px-5 py-4 font-mono text-[11px] text-footer sm:px-8">
-          &copy; 2026 {site.name}. All rights reserved.
-        </p>
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+          <p className="font-mono text-[11px] text-footer">&copy; 2026 {site.name}. All rights reserved.</p>
+          <Link href="/#home" aria-label="Back to top" className="plain inline-flex h-9 w-9 items-center justify-center rounded-full border border-accent/50 bg-accent/10 text-accent-light transition-colors hover:bg-accent/20">
+            <ArrowRight size={16} className="-rotate-90" />
+          </Link>
+        </div>
       </div>
     </footer>
   );

@@ -7,9 +7,9 @@ const accents = {
   red: "border-red/40 bg-red/12 text-red",
 } as const;
 const glows = {
-  blue: "hover:border-accent/60",
-  cyan: "hover:border-green/60",
-  red: "hover:border-red/60",
+  blue: "border-accent/30 hover:border-accent/60",
+  cyan: "border-green/30 hover:border-green/60",
+  red: "border-red/30 hover:border-red/60",
 } as const;
 
 export default function ValueCard({

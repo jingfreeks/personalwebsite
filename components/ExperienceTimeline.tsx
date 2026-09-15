@@ -1,15 +1,22 @@
 import { experience } from "@/lib/experience";
+import { site } from "@/lib/site";
+import { ArrowRight } from "@/components/Icons";
 
 export default function ExperienceTimeline() {
   return (
     <section id="experience" aria-labelledby="experience-heading">
-      <h2 id="experience-heading" className="font-heading mb-8 text-3xl font-bold text-primary sm:text-4xl">
-        Work <span className="text-gradient">Experience</span>
-      </h2>
+      <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
+        <h2 id="experience-heading" className="font-heading text-3xl font-bold text-primary sm:text-4xl">
+          Work <span className="text-gradient">Experience</span>
+        </h2>
+        <a href={site.resumeUrl} download className="plain inline-flex items-center gap-2 text-sm font-semibold text-link hover:text-accent-light">
+          View Full Resume <ArrowRight size={16} />
+        </a>
+      </div>
       <ol className="relative pl-8">
         <span aria-hidden="true" className="timeline-line absolute left-[7px] top-2 bottom-2 w-0.5 rounded-full" />
         {experience.map((job) => (
-          <li key={`${job.company}-${job.dates}`} className="relative pb-8 last:pb-0">
+          <li key={`${job.company}-${job.dates}`} className="relative pb-6 last:pb-0">
             <span
               aria-hidden="true"
               className="absolute -left-8 top-1 h-4 w-4 rounded-full border-2 border-accent-light bg-page shadow-[0_0_0_4px_rgba(22,131,255,0.18),0_0_14px_rgba(34,216,255,0.6)]"
