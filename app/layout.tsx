@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, IBM_Plex_Mono } from "next/font/google";
 import { site } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -17,23 +18,46 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
+const title = `${site.name} — Full Stack Web & Mobile Developer`;
 const description =
-  "Software developer building modern, scalable web and mobile solutions — React, React Native, Next.js and Supabase — and founder of Dells Software, maker of Tindahan POS.";
+  "Lyndell Dobluis is a software developer in Davao City, Philippines building web and mobile apps with React, React Native, Next.js and Supabase — founder of Dells Software (Tindahan POS). Open to remote work.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: `${site.name} — ${site.role}`, template: `%s · ${site.name}` },
+  title: { default: title, template: `%s · ${site.name}` },
   description,
+  keywords: [
+    "Lyndell Dobluis",
+    "software developer Philippines",
+    "full stack developer Davao City",
+    "React developer",
+    "React Native developer",
+    "Next.js developer",
+    "Supabase",
+    "POS system developer",
+    "Dells Software",
+    "Tindahan POS",
+    "freelance developer Philippines",
+  ],
+  authors: [{ name: site.fullName, url: site.url }],
+  creator: site.fullName,
   alternates: { canonical: "/" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
-    title: `${site.name} — ${site.role}`,
+    title,
     description,
     url: site.url,
     siteName: site.name,
-    type: "website",
+    type: "profile",
     locale: "en_US",
   },
-  twitter: { card: "summary", title: `${site.name} — ${site.role}`, description },
+  twitter: { card: "summary_large_image", title, description },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#030a12",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -47,6 +71,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <JsonLd />
       </body>
     </html>
   );

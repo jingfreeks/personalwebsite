@@ -14,8 +14,8 @@ export default function Hero() {
   return (
     <section id="home" aria-labelledby="hero-heading" className="relative overflow-hidden bg-[#020811] lg:-mt-14 lg:aspect-[1024/500]">
       {/* ── lg+: full-bleed workspace scene (design image with its baked-in UI erased) ── */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden lg:block">
-        <Image src="/assets/hero/workspace.jpg" alt="" fill priority sizes="100vw" className="object-cover object-top" />
+      <div className="pointer-events-none absolute inset-0 hidden lg:block">
+        <Image src="/assets/hero/workspace.jpg" alt={`${site.fullName}, software developer, at his desk with code on the monitors behind him`} fill priority sizes="100vw" className="object-cover object-top" />
         {/* light readability gradient behind the copy */}
         <div className="absolute inset-y-0 left-0 w-[46%] bg-gradient-to-r from-[#020811]/70 via-[#020811]/35 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-[10%] bg-gradient-to-t from-[#020811]/80 to-transparent" />

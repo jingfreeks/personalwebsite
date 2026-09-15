@@ -5,6 +5,9 @@ import { ArrowRight } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Writing from Lyndell Dobluis on building POS and business systems for Filipino small businesses, React Native, and AI-assisted development.",
+  alternates: { canonical: "/blog" },
+  // No posts yet — keep the placeholder out of search results until there is content.
+  robots: { index: false, follow: true },
 };
 
 export default function BlogPage() {
