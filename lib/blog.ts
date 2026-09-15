@@ -28,6 +28,8 @@ export type BlogCover = { icon: "pos" | "inventory"; label: string };
 export type BlogPost = {
   slug: string;
   title: string;
+  /** Optional shorter search-result title (" | Lyndell Dobluis" is appended, keep the total ≤ 60 chars). */
+  seoTitle?: string;
   description: string;
   category: BlogCategory["slug"];
   publishedAt: string; // ISO date, the date the article actually went live
@@ -59,12 +61,13 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-pos-system-helps-small-businesses",
     title: "How a POS System Can Help Small Businesses Manage Sales and Inventory",
+    seoTitle: "How a POS System Helps Small Businesses",
     description:
       "Learn how a POS system helps small businesses track sales, manage inventory, reduce errors, and make better decisions using real-time business information.",
     category: "business-software",
     publishedAt: "2026-09-15",
     cover: { icon: "pos", label: "A point of sale screen connected to an inventory list" },
-    relatedSlugs: ["why-sari-sari-stores-need-better-inventory-management"],
+    relatedSlugs: ["why-sari-sari-stores-need-better-inventory-management", "how-to-choose-pos-system-sari-sari-store"],
     body: [
       {
         type: "p",
@@ -75,7 +78,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "p",
         runs: [
-          "A point-of-sale (POS) system doesn't answer those questions by magic. What it does is organize the same information you'd otherwise be tracking on paper or from memory, so the answers are a few taps away instead of a evening spent counting stock. This article walks through what a POS system actually does, where it helps, and how to tell whether one is worth it for your store.",
+          "A point-of-sale (POS) system doesn't answer those questions by magic. What it does is organize the same information you'd otherwise be tracking on paper or from memory, so the answers are a few taps away instead of an evening spent counting stock. This article walks through what a POS system actually does, where it helps, and how to tell whether one is worth it for your store.",
         ],
       },
       { type: "h2", text: "What is a POS system?" },
@@ -236,12 +239,13 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "why-sari-sari-stores-need-better-inventory-management",
     title: "Why Sari-Sari Stores Need Better Inventory Management",
+    seoTitle: "Inventory Management for Sari-Sari Stores",
     description:
       "Learn why inventory management matters for sari-sari stores and how better stock tracking can reduce shortages, overstocking, losses, and missed sales.",
     category: "business-software",
     publishedAt: "2026-09-15",
     cover: { icon: "inventory", label: "Shelves of packaged goods with stock levels tracked" },
-    relatedSlugs: ["how-pos-system-helps-small-businesses"],
+    relatedSlugs: ["how-pos-system-helps-small-businesses", "how-to-choose-pos-system-sari-sari-store"],
     body: [
       {
         type: "p",
@@ -396,9 +400,477 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "how-to-choose-pos-system-sari-sari-store",
+    title: "How to Choose a POS System for a Sari-Sari Store",
+    seoTitle: "How to Choose a Sari-Sari Store POS System",
+    description: "What a sari-sari store really needs from a POS system: the must-have features, which device to use, internet, costs, and a simple checklist before you buy.",
+    category: "business-software",
+    publishedAt: "2026-09-15",
+    cover: {
+      icon: "pos",
+      label: "A buyer's checklist for choosing a sari-sari store POS system"
+    },
+    relatedSlugs: [
+      "how-pos-system-helps-small-businesses",
+      "why-sari-sari-stores-need-better-inventory-management"
+    ],
+    body: [
+      {
+        type: "p",
+        runs: [
+          "From the outside, a sari-sari store looks simple to run. A customer picks a few items, pays, and leaves."
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Behind the counter, you're answering the same questions all day. What did I sell? How much stock is left? What do I need to reorder? Who still has utang? Does the cash in the drawer match my sales?"
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Most stores answer those questions with a notebook, a calculator and a good memory. That works until the product list gets longer and the notebook can't keep up. That's usually when owners start looking for a sari-sari store POS system."
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "The catch is that most POS software is built for supermarkets, restaurants and retail chains, with prices and complexity to match. I run a small sari-sari store myself and built Tindahan POS for stores like mine, so this guide focuses on what actually matters at a small counter. It should help whichever system you end up choosing."
+        ]
+      },
+      {
+        type: "h2",
+        text: "When manual tracking stops working"
+      },
+      {
+        type: "p",
+        runs: [
+          "Notebooks, calculators, spreadsheets and supplier receipts are a perfectly good way to start. For a new store with a short product list, they're often the most practical option. The trouble begins as sales and products grow:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Sales are hard to review, because transactions end up scattered across notebooks and loose sheets of paper."
+          ],
+          [
+            "Your records drift away from the shelf: the notebook says 20 pieces, but the shelf has 15."
+          ],
+          [
+            "Restocking turns into guesswork, and you find out an item is gone when a customer asks for it."
+          ],
+          [
+            "When the cash doesn't match your sales, finding the gap can take a whole evening."
+          ],
+          [
+            "Utang gets messy. Remembering who owes what, and how much they've already paid, is one of the hardest things to track on paper."
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Notebooks aren't the problem. Manual processes simply get harder to keep up with as the business grows."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Start with the problems you actually have"
+      },
+      {
+        type: "p",
+        runs: [
+          "POS software is usually sold on a long feature list: inventory, accounting, customer management, analytics, multiple branches, staff scheduling, integrations. It's easy to be impressed."
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "A better question is whether you'll use those features every day. For a sari-sari store, the right POS is rarely the one with the most features. It's the one that makes your most important daily tasks faster and easier. If you're still deciding whether a POS is worth it at all, start with ",
+          {
+            text: "how a POS system helps small businesses manage sales and inventory",
+            href: "/blog/how-pos-system-helps-small-businesses"
+          },
+          "."
+        ]
+      },
+      {
+        type: "h2",
+        text: "The features that matter most"
+      },
+      {
+        type: "h3",
+        text: "1. Fast, simple checkout"
+      },
+      {
+        type: "p",
+        runs: [
+          "You'll ring up sales hundreds of times a day, so this has to be quick. A sale should take a few taps, not a trip through several screens:"
+        ]
+      },
+      {
+        type: "flow",
+        steps: [
+          "Find the product",
+          "Enter the quantity",
+          "Check the total",
+          "Record the payment"
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "When you try a POS, time yourself ringing up a typical three-item sale. If it feels slower than your notebook, your customers will feel it too."
+        ]
+      },
+      {
+        type: "h3",
+        text: "2. Inventory that updates with every sale"
+      },
+      {
+        type: "p",
+        runs: [
+          "Every sale should reduce your stock automatically, so you can see at any moment how much of each product is left. Test this before you commit: sell one item and check that the count went down. Software only knows what's entered into it, though, so spoilage, damaged goods and unrecorded sales still call for a regular physical count. The article on ",
+          {
+            text: "why sari-sari stores need better inventory management",
+            href: "/blog/why-sari-sari-stores-need-better-inventory-management"
+          },
+          " goes deeper on this."
+        ]
+      },
+      {
+        type: "h3",
+        text: "3. Low-stock alerts"
+      },
+      {
+        type: "p",
+        runs: [
+          "You shouldn't learn that your best-selling coffee is gone when a customer asks for it. Look for a system that lets you set a reorder level for each product and shows you a short list of what's running low, so you can restock before it costs you a sale."
+        ]
+      },
+      {
+        type: "h3",
+        text: "4. Utang tracking with running balances"
+      },
+      {
+        type: "p",
+        runs: [
+          "If regular customers buy on credit, this may matter as much as inventory, and it's one of the first things generic POS software leaves out. At a minimum, you should be able to record a sale on credit, accept partial payments, and see each customer's current balance and payment history without flipping through pages."
+        ]
+      },
+      {
+        type: "h3",
+        text: "5. Clear daily sales"
+      },
+      {
+        type: "p",
+        runs: [
+          "At closing time, you want quick answers: how much you sold, how many transactions you made, which products moved, and how today compares with previous days. If getting those numbers still takes a calculator, the POS isn't doing its job."
+        ]
+      },
+      {
+        type: "h3",
+        text: "6. Staff accounts, if someone else minds the counter"
+      },
+      {
+        type: "p",
+        runs: [
+          "If a family member or helper handles sales, give them their own login. Separate cashier accounts let you control what each person can see and do, and let you review who recorded which sale."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Features you probably don't need yet"
+      },
+      {
+        type: "p",
+        runs: [
+          "More features don't automatically make a better POS. A small sari-sari store rarely needs:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Complex enterprise reporting"
+          ],
+          [
+            "Advanced customer relationship management (CRM) tools"
+          ],
+          [
+            "Warehouse management"
+          ],
+          [
+            "Large-scale multi-branch features"
+          ],
+          [
+            "Staff scheduling"
+          ],
+          [
+            "Dozens of third-party integrations"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "These tools are valuable for bigger businesses, but they make software harder to learn and often more expensive. Choose for the store you have today and where you realistically expect it to go. You can always upgrade later."
+        ]
+      },
+      {
+        type: "h2",
+        text: "What device do you need?"
+      },
+      {
+        type: "p",
+        runs: [
+          "A common myth is that you need to buy an expensive POS terminal. Depending on the software, a device you already own may be enough."
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          ["Smartphone: handy for checking sales, stock and reports while you're away from the store, but a small screen can feel cramped when you ring up many sales."],
+          ["Tablet: a bigger screen that still fits on a small counter. Give it a stand or a safe spot near the register."],
+          ["Laptop: the most comfortable option for managing products, reviewing reports and bookkeeping, if you have the counter space."]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "So instead of asking which POS machine to buy, ask which device you already have that can run the system comfortably."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Do you need an internet connection?"
+      },
+      {
+        type: "p",
+        runs: [
+          "It depends on the system. Cloud-based POS software stores your data online, which lets you check on your store from different devices and places, but it also depends on a working connection. Before you commit, ask the provider:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Does every sale need the internet?"
+          ],
+          [
+            "What happens when the connection drops in the middle of a busy day?"
+          ],
+          [
+            "Is there an offline mode, and how does data sync once you're back online?"
+          ],
+          [
+            "Where is my business data stored, and can I export it?"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Brownouts and weak signal are part of running a store in many areas, so it's better to know the answers before you depend on the system."
+        ]
+      },
+      {
+        type: "h2",
+        text: "How much should you spend?"
+      },
+      {
+        type: "p",
+        runs: [
+          "You don't need to spend thousands of pesos on hardware before you start. Look at the costs separately:"
+        ]
+      },
+      {
+        type: "table",
+        headers: [
+          "Cost",
+          "What to check"
+        ],
+        rows: [
+          [
+            "Software",
+            "Monthly or annual subscription, or a one-time license, and what each plan includes"
+          ],
+          [
+            "Hardware",
+            "Whether the phone, tablet or laptop you already have is enough"
+          ],
+          [
+            "Internet",
+            "Whether you need a steadier connection or a mobile data backup"
+          ],
+          [
+            "Optional extras",
+            "A barcode scanner, receipt printer or cash drawer: useful later, rarely needed on day one"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Start with what your store needs now, and add equipment as the business grows."
+        ]
+      },
+      {
+        type: "h2",
+        text: "A simple checklist before you choose"
+      },
+      {
+        type: "p",
+        runs: [
+          "Bring these questions to any POS demo or free trial."
+        ]
+      },
+      {
+        type: "h3",
+        text: "Sales"
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Can I record a typical sale in a few seconds?"
+          ],
+          [
+            "Can I look up past transactions?"
+          ],
+          [
+            "Can I see today's total sales at a glance?"
+          ]
+        ]
+      },
+      {
+        type: "h3",
+        text: "Inventory"
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Does every sale update my stock automatically?"
+          ],
+          [
+            "Can I set reorder levels and see what's running low?"
+          ]
+        ]
+      },
+      {
+        type: "h3",
+        text: "Customers and utang"
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Can I record a sale on credit?"
+          ],
+          [
+            "Can I record partial payments and see each customer's balance?"
+          ]
+        ]
+      },
+      {
+        type: "h3",
+        text: "Staff"
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Can I create separate cashier accounts?"
+          ],
+          [
+            "Can I control what each person can see and do?"
+          ]
+        ]
+      },
+      {
+        type: "h3",
+        text: "Devices, internet and cost"
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Will it run on a device I already own?"
+          ],
+          [
+            "What happens when the internet goes down?"
+          ],
+          [
+            "Is the price affordable, with no hidden fees?"
+          ]
+        ]
+      },
+      {
+        type: "callout",
+        title: "The question that matters most",
+        runs: [
+          "Can I use this every day without getting frustrated? If the answer is no, the rest of the checklist doesn't matter."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Why I built Tindahan POS"
+      },
+      {
+        type: "p",
+        runs: [
+          {
+            text: "Tindahan POS",
+            href: "/projects/tindahan-pos"
+          },
+          " started from a simple idea: a small store shouldn't need enterprise software just to understand its own day. It covers the essentials in this guide, including fast checkout, inventory with low-stock alerts, utang tracking with running balances, staff accounts with their own permissions, and daily sales reports, in a web app for the counter and a companion mobile app for owners."
+        ]
+      },
+      {
+        type: "callout",
+        runs: [
+          "Know your sales. Know your stock. Know your utang."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Final thoughts"
+      },
+      {
+        type: "p",
+        runs: [
+          "Choosing a POS isn't about finding the longest feature list. It's about finding the system that solves your store's real problems: recording sales quickly, knowing your stock, keeping utang under control, and running on a device you already own at a price you can afford."
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "The best POS for a sari-sari store isn't the most powerful one. It's the one that makes running your store easier. If you'd like to see how Tindahan POS handles all of this, ",
+          {
+            text: "get in touch",
+            href: "/#contact"
+          },
+          " and I'll walk you through it."
+        ]
+      }
+    ]
+  },
 ];
 
 export const postBySlug = (slug: string) => blogPosts.find((p) => p.slug === slug);
 
 export const relatedPosts = (post: BlogPost): BlogPost[] =>
   post.relatedSlugs.map((s) => postBySlug(s)).filter((p): p is BlogPost => !!p);
+
+/** Articles whose body links to the given internal route (used for "Related reading" on project pages). */
+export const postsLinkingTo = (href: string): BlogPost[] =>
+  blogPosts.filter((post) =>
+    post.body.some((block) => {
+      const runs = block.type === "p" || block.type === "callout" ? block.runs : block.type === "ul" ? block.items.flat() : [];
+      return runs.some((run) => typeof run !== "string" && run.href === href);
+    }),
+  );

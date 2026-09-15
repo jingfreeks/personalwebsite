@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudyProjects, projectBySlug } from "@/lib/projects";
+import { postsLinkingTo } from "@/lib/blog";
 import { site } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { ArrowRight, ExternalLink } from "@/components/Icons";
@@ -52,6 +53,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   if (!p?.caseStudy) notFound();
   const cs = p.caseStudy;
   const others = caseStudyProjects.filter((o) => o.slug !== p.slug);
+  const reading = postsLinkingTo(`/projects/${p.slug}`);
 
   return (
     <main className="bg-page text-primary">
@@ -122,6 +124,21 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               ))}
             </div>
           </Section>
+        )}
+
+        {reading.length > 0 && (
+          <section aria-labelledby="reading-heading" className="mt-12 border-t border-white/10 pt-6">
+            <h2 id="reading-heading" className="font-heading text-[1.35rem] font-bold text-primary">Related reading</h2>
+            <ul className="mt-3 space-y-2 text-[0.95rem]">
+              {reading.map((post) => (
+                <li key={post.slug}>
+                  <Link href={`/blog/${post.slug}`} className="plain inline-flex items-start gap-1.5 font-semibold text-link hover:text-accent-light">
+                    {post.title} <ArrowRight className="mt-1 h-4 w-4 shrink-0" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         )}
 
         <nav aria-label="More projects" className="mt-12 border-t border-white/10 pt-6 text-[0.9rem]">
