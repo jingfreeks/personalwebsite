@@ -32,9 +32,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       authors: [site.url],
-      images: ["/opengraph-image.png"],
+      images: [post.cover.ogImage ?? post.cover.image ?? "/opengraph-image.png"],
     },
-    twitter: { card: "summary_large_image", title: post.title, description: post.description, images: ["/opengraph-image.png"] },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [post.cover.ogImage ?? post.cover.image ?? "/opengraph-image.png"],
+    },
   };
 }
 
@@ -49,7 +54,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
     "@type": "Article",
     headline: post.title,
     description: post.description,
-    image: `${site.url}/opengraph-image.png`,
+    image: `${site.url}${post.cover.ogImage ?? post.cover.image ?? "/opengraph-image.png"}`,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt ?? post.publishedAt,
     author: { "@id": `${site.url}/#person` },
@@ -74,7 +79,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           <p className="mt-3 text-[1rem] leading-relaxed text-primary/85">{post.description}</p>
         </header>
 
-        <BlogCover cover={post.cover} className="mt-6 aspect-[16/9] w-full" />
+        <BlogCover cover={post.cover} className="mt-6 aspect-[16/9] w-full" priority />
 
         <BlogArticleBody blocks={post.body} />
 

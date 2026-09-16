@@ -65,7 +65,12 @@ async function auditPage(path, { expectIndex = true } = {}) {
   }
   const ogImage = meta("og:image", "property");
   if (ogImage) {
-    const r = await fetch(ogImage.startsWith("http") ? ogImage : base + ogImage, { method: "GET" });
+    // Absolute URLs on our own canonical host are checked against the build under test,
+    // so a newly added image isn't reported missing just because it isn't deployed yet.
+    const canonicalHost = canonical ? new URL(canonical).host : null;
+    const parsed = new URL(ogImage, base);
+    const url = parsed.host === new URL(base).host || parsed.host === canonicalHost ? base + parsed.pathname + parsed.search : ogImage;
+    const r = await fetch(url, { method: "GET" });
     if (!r.ok) fail(p(`og:image returns HTTP ${r.status}`));
     else if (!/^image\//.test(r.headers.get("content-type") ?? "")) fail(p("og:image is not an image"));
   }

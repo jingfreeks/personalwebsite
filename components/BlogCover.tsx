@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PosIcon, InventoryIcon } from "@/components/Icons";
 import type { BlogCover as BlogCoverData } from "@/lib/blog";
 
@@ -8,8 +9,27 @@ const icons = { pos: PosIcon, inventory: InventoryIcon } as const;
  * stays honest about what the article actually is. Same grid + icon-tile
  * language as the project card image fallback, sized as a real cover.
  */
-export default function BlogCover({ cover, className = "" }: { cover: BlogCoverData; className?: string }) {
+export default function BlogCover({
+  cover,
+  className = "",
+  sizes = "(max-width: 768px) 100vw, 704px",
+  priority = false,
+}: {
+  cover: BlogCoverData;
+  className?: string;
+  sizes?: string;
+  priority?: boolean;
+}) {
   const Icon = icons[cover.icon];
+  if (cover.image) {
+    return (
+      <div className={`relative overflow-hidden rounded-xl border border-white/10 bg-[#0a1626] ${className}`}>
+        {/* object-position only matters where the box is narrower than the banner (thumbnails):
+            keep the subject, not the title text, in frame. */}
+        <Image src={cover.image} alt={cover.label} fill sizes={sizes} priority={priority} className="object-cover object-[68%_50%]" />
+      </div>
+    );
+  }
   return (
     <div
       role="img"
