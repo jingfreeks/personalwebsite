@@ -46,6 +46,11 @@ export default function BlogPage() {
           Practical notes from building web and mobile apps and business systems — what worked, what didn&apos;t, and
           how I&apos;d do it again.
         </p>
+        <p className="mt-3 text-[0.85rem] text-primary/70">
+          <a href="/blog/rss.xml" className="font-semibold text-link hover:text-accent-light">
+            Subscribe via RSS
+          </a>
+        </p>
 
         {posts.length ? (
           <ul className="mt-10 space-y-5">

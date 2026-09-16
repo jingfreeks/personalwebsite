@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: site.fullName, url: site.url }],
   creator: site.fullName,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", types: { "application/rss+xml": [{ url: "/blog/rss.xml", title: `${site.name} — Blog` }] } },
   verification: { google: "5mJEdBa48RrahZ6DPR6n7cMVcPwPHq8uib6IqVCEi08" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
@@ -76,6 +77,7 @@ export default function RootLayout({
         <JsonLd />
         {/* Vercel serves the analytics script; skip it for local/CI `next start` builds */}
         {process.env.VERCEL === "1" && <Analytics />}
+        {process.env.VERCEL === "1" && <SpeedInsights />}
       </body>
     </html>
   );
