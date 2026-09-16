@@ -67,7 +67,13 @@ export const blogPosts: BlogPost[] = [
       "Learn how a POS system helps small businesses track sales, manage inventory, reduce errors, and make better decisions using real-time business information.",
     category: "business-software",
     publishedAt: "2026-09-15",
-    cover: { icon: "pos", label: "A point of sale screen connected to an inventory list" },
+    cover: {
+      icon: "pos",
+      label:
+        "Article banner: on the left a store owner buried in paper records and receipts, on the right a store owner ringing up a sale on a Tindahan POS terminal, beside the title \"Same Store. A Brighter Tomorrow.\"",
+      image: "/assets/blog/pos-system-small-business.webp",
+      ogImage: "/assets/blog/pos-system-small-business-og.jpg",
+    },
     relatedSlugs: ["why-sari-sari-stores-need-better-inventory-management", "how-to-choose-pos-system-sari-sari-store"],
     body: [
       {
