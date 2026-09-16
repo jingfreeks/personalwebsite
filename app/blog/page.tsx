@@ -54,7 +54,7 @@ export default function BlogPage() {
               return (
                 <li key={p.slug}>
                   <article className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-[#0b1a2e]/80 p-5 sm:flex-row sm:items-start">
-                    <BlogCover cover={p.cover} className="h-32 w-full shrink-0 sm:h-28 sm:w-28" />
+                    <BlogCover cover={p.cover} className="h-32 w-full shrink-0 sm:h-28 sm:w-28" sizes="(max-width: 640px) 100vw, 112px" />
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.72rem] text-accent-light">
                         <span className="rounded-full border border-white/10 bg-[#0e2140] px-2.5 py-0.5 font-medium text-primary/90">

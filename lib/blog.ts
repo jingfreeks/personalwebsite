@@ -23,7 +23,8 @@ export type BlogBlock =
   | { type: "table"; headers: string[]; rows: string[][] }
   | { type: "callout"; title?: string; runs: BlogRun[] };
 
-export type BlogCover = { icon: "pos" | "inventory"; label: string };
+/** `label` is the alt text / accessible name. With `image`, the file is shown; without it, a code-drawn cover is used. */
+export type BlogCover = { icon: "pos" | "inventory"; label: string; image?: string; ogImage?: string };
 
 export type BlogPost = {
   slug: string;
@@ -409,7 +410,10 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-09-15",
     cover: {
       icon: "pos",
-      label: "A buyer's checklist for choosing a sari-sari store POS system"
+      label:
+        "Article banner: a sari-sari store owner ringing up a sale on a Tindahan POS terminal at the counter, beside the title \"How to Choose the Right POS System for Your Sari-Sari Store\"",
+      image: "/assets/blog/choose-pos-sari-sari-store.webp",
+      ogImage: "/assets/blog/choose-pos-sari-sari-store-og.jpg"
     },
     relatedSlugs: [
       "how-pos-system-helps-small-businesses",
