@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       description: post.description,
       url: `${site.url}/blog/${post.slug}`,
       type: "article",
+      locale: post.lang === "tl" ? "tl_PH" : "en_US",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       authors: [site.url],
@@ -60,11 +61,12 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
     author: { "@id": `${site.url}/#person` },
     publisher: { "@id": `${site.url}/#person` },
     mainEntityOfPage: `${site.url}/blog/${post.slug}`,
+    inLanguage: post.lang === "tl" ? "tl-PH" : "en",
   };
 
   return (
     <main className="bg-page text-primary">
-      <article className="mx-auto max-w-[44rem] px-5 pb-16 pt-8 sm:px-8">
+      <article lang={post.lang === "tl" ? "tl" : undefined} className="mx-auto max-w-[44rem] px-5 pb-16 pt-8 sm:px-8">
         <Breadcrumbs items={[{ name: "Blog", href: "/blog" }, { name: post.title, href: `/blog/${post.slug}` }]} />
         <header className="mt-5">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.72rem] text-accent-light">
@@ -83,7 +85,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
 
         <BlogArticleBody blocks={post.body} />
 
-        <BlogCTA />
+        <BlogCTA {...post.cta} />
         <BlogRelated posts={relatedPosts(post)} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />

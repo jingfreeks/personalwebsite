@@ -9,6 +9,7 @@ export const blogCategories: BlogCategory[] = [
   { slug: "react-native", name: "React Native", description: "Mobile app architecture, FlatList performance and shipping to the stores." },
   { slug: "business-software", name: "Business Software", description: "Building POS, inventory, accounting and ERP-style systems for small businesses." },
   { slug: "supabase", name: "Supabase", description: "Row Level Security, authentication, database design and application security." },
+  { slug: "sari-sari-store", name: "Sari-Sari Store", description: "Praktikal na gabay sa pagpapatakbo ng sari-sari store — puhunan, paninda, presyo, imbentaryo at utang." },
 ];
 
 /** A run of inline text, or a link with real anchor text pointing at a route that actually exists. */
@@ -36,6 +37,10 @@ export type BlogPost = {
   publishedAt: string; // ISO date, the date the article actually went live
   updatedAt?: string;
   cover: BlogCover;
+  /** BCP-47 language of the body; defaults to English. */
+  lang?: "en" | "tl";
+  /** Overrides the closing call-to-action copy (e.g. for articles not written in English). */
+  cta?: { heading: string; text: string; explore: string; contact: string };
   /** Slugs of posts to surface under "Related articles", in order. */
   relatedSlugs: string[];
   body: BlogBlock[];
@@ -74,7 +79,7 @@ export const blogPosts: BlogPost[] = [
       image: "/assets/blog/pos-system-small-business.webp",
       ogImage: "/assets/blog/pos-system-small-business-og.jpg",
     },
-    relatedSlugs: ["why-sari-sari-stores-need-better-inventory-management", "how-to-choose-pos-system-sari-sari-store"],
+    relatedSlugs: ["why-sari-sari-stores-need-better-inventory-management", "how-to-choose-pos-system-sari-sari-store", "paano-mag-simula-ng-sari-sari-store"],
     body: [
       {
         type: "p",
@@ -258,7 +263,7 @@ export const blogPosts: BlogPost[] = [
       image: "/assets/blog/sari-sari-store-inventory-management.webp",
       ogImage: "/assets/blog/sari-sari-store-inventory-management-og.jpg",
     },
-    relatedSlugs: ["how-pos-system-helps-small-businesses", "how-to-choose-pos-system-sari-sari-store"],
+    relatedSlugs: ["how-pos-system-helps-small-businesses", "how-to-choose-pos-system-sari-sari-store", "paano-mag-simula-ng-sari-sari-store"],
     body: [
       {
         type: "p",
@@ -871,6 +876,658 @@ export const blogPosts: BlogPost[] = [
             href: "/#contact"
           },
           " and I'll walk you through it."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "paano-mag-simula-ng-sari-sari-store",
+    title: "Paano Mag-Simula ng Sari-Sari Store: Simpleng Gabay para sa mga Baguhang Negosyante",
+    seoTitle: "Paano Mag-Simula ng Sari-Sari Store",
+    description: "Praktikal na gabay sa pagsisimula ng sari-sari store: puhunan, paninda, presyo, imbentaryo, utang, at simpleng routine para kumita ang tindahan.",
+    category: "sari-sari-store",
+    lang: "tl",
+    publishedAt: "2026-09-16",
+    cover: {
+      icon: "inventory",
+      label:
+        "Banner ng artikulo: may-ari ng sari-sari store na nagsusulat sa kanyang notebook sa counter, katabi ang mga talaan ng inventory, sales at utang, sa tabi ng pamagat na \"Paano Mag-Simula ng Sari-Sari Store\"",
+      image: "/assets/blog/paano-mag-simula-ng-sari-sari-store.webp",
+      ogImage: "/assets/blog/paano-mag-simula-ng-sari-sari-store-og.jpg",
+    },
+    cta: {
+      heading: "Gusto mong mas madaling subaybayan ang benta at stock?",
+      text: "Tingnan kung paano pinagsasama ng Tindahan POS ang sales, inventory at utang sa isang simpleng sistema.",
+      explore: "Tingnan ang Tindahan POS",
+      contact: "Humiling ng demo"
+    },
+    relatedSlugs: [
+      "how-to-choose-pos-system-sari-sari-store",
+      "why-sari-sari-stores-need-better-inventory-management"
+    ],
+    body: [
+      {
+        type: "p",
+        runs: [
+          "Ang sari-sari store ay isa sa mga pinakasimpleng negosyo na maaaring simulan sa Pilipinas. Hindi mo kailangan ng malaking puwesto o napakalaking kapital para makapagsimula. Ang mahalaga ay tamang pagpaplano, maingat na paggamit ng puhunan, at magandang pag-manage ng iyong mga paninda."
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Kung may balak kang magbukas ng sariling sari-sari store o tindahan, narito ang praktikal na gabay na maaari mong sundan."
+        ]
+      },
+      {
+        type: "h2",
+        text: "1. Alamin Kung May Demand sa Inyong Lugar"
+      },
+      {
+        type: "p",
+        runs: [
+          "Bago bumili ng paninda, tingnan muna ang lugar kung saan mo balak magtayo ng tindahan. Tanungin ang iyong sarili:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Marami bang bahay sa paligid?"
+          ],
+          [
+            "May mga estudyante o manggagawa ba na malapit?"
+          ],
+          [
+            "May ibang sari-sari store ba sa lugar?"
+          ],
+          [
+            "Ano ang mga produktong madalas hinahanap ng mga kapitbahay?"
+          ],
+          [
+            "Malayo ba ang pinakamalapit na grocery o convenience store?"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Hindi kailangang matakot kung may ibang tindahan sa paligid. Ang mahalaga ay malaman kung ano ang kailangan ng mga customer at kung paano ka makakapagbigay ng mas magandang serbisyo."
+        ]
+      },
+      {
+        type: "h2",
+        text: "2. Magtakda ng Puhunan"
+      },
+      {
+        type: "p",
+        runs: [
+          "Hindi kailangang ubusin agad ang iyong ipon para makapagsimula. Gumawa ng simpleng budget para sa:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Unang stock ng paninda"
+          ],
+          [
+            "Shelves at lalagyan"
+          ],
+          [
+            "Counter o maliit na display area"
+          ],
+          [
+            "Refrigerator, kung kinakailangan"
+          ],
+          [
+            "Cash drawer"
+          ],
+          [
+            "Packaging at plastic bags"
+          ],
+          [
+            "Business registration at permits"
+          ],
+          [
+            "Emergency fund o dagdag na working capital"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Sa permits, mag-iba-iba ang kailangan depende sa inyong barangay at lungsod o munisipyo, kaya magtanong muna sa barangay hall o city hall bago magbukas."
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Magtabi rin ng pera para sa replenishment. Hindi sapat ang puhunan para sa unang stock lamang; kailangan mong may pera para makabili ulit ng mga produktong mabilis maubos."
+        ]
+      },
+      {
+        type: "h2",
+        text: "3. Magsimula sa Mga Produktong Madalas Bilhin"
+      },
+      {
+        type: "p",
+        runs: [
+          "Isa sa mga karaniwang pagkakamali ng bagong store owner ay ang pagbili agad ng napakaraming klase ng produkto. Mas magandang magsimula sa mga produktong may regular na demand. Halimbawa:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Instant noodles"
+          ],
+          [
+            "Kape"
+          ],
+          [
+            "Asukal"
+          ],
+          [
+            "Bigas"
+          ],
+          [
+            "De-lata"
+          ],
+          [
+            "Biskwit at snacks"
+          ],
+          [
+            "Soft drinks at bottled drinks"
+          ],
+          [
+            "Tubig"
+          ],
+          [
+            "Sabon at detergent"
+          ],
+          [
+            "Shampoo at personal-care products"
+          ],
+          [
+            "Condiments"
+          ],
+          [
+            "Candy at iba pang tingi-tinging paninda"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Pagmasdan kung alin ang mabilis maubos at alin ang matagal manatili sa shelves. Ang layunin ay hindi ang magkaroon ng pinakamaraming produkto, kundi ang magkaroon ng tamang produkto sa tamang dami."
+        ]
+      },
+      {
+        type: "h2",
+        text: "4. Alamin ang Presyo at Kita"
+      },
+      {
+        type: "p",
+        runs: [
+          "Hindi lahat ng mabiling produkto ay may malaking kita. Halimbawa, kung bumili ka ng produkto sa ₱10 at ibinenta mo ito sa ₱12, ang gross profit mo ay ₱2 kada piraso — mga 20% markup sa puhunan — bago pa ibawas ang ibang gastos."
+        ]
+      },
+      {
+        type: "flow",
+        steps: [
+          "Puhunan",
+          "Selling price",
+          "Gross profit"
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Regular na suriin ang presyo ng mga supplier dahil maaaring magbago ang cost ng iyong paninda. Kapag tumaas ang puhunan at hindi mo naiayos ang presyo, unti-unting nauubos ang kita mo nang hindi mo namamalayan."
+        ]
+      },
+      {
+        type: "h2",
+        text: "5. Magkaroon ng Maayos na Imbentaryo"
+      },
+      {
+        type: "p",
+        runs: [
+          "Dito nahihirapan ang maraming sari-sari store owner. Kapag mano-mano ang paglista, madaling mangyari ang:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Nakakalimutang mag-restock"
+          ],
+          [
+            "Hindi napapansin ang low-stock products"
+          ],
+          [
+            "Hindi alam kung ilang items ang natitira"
+          ],
+          [
+            "May produktong nawawala"
+          ],
+          [
+            "May expired o mabagal maibentang produkto"
+          ],
+          [
+            "Hindi alam kung alin ang best sellers"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Kahit maliit ang iyong tindahan, mahalagang may simpleng paraan ka para subaybayan ang stock. Maaari kang magsimula sa notebook o spreadsheet, at habang lumalaki ang negosyo ay lumipat sa mas organisadong sistema. Mas detalyado ang paliwanag dito sa artikulong ",
+          {
+            text: "kung bakit kailangan ng sari-sari store ng mas maayos na inventory management",
+            href: "/blog/why-sari-sari-stores-need-better-inventory-management"
+          },
+          "."
+        ]
+      },
+      {
+        type: "h2",
+        text: "6. Ihiwalay ang Pera ng Negosyo"
+      },
+      {
+        type: "p",
+        runs: [
+          "Isa sa pinakamahalagang habit ng isang business owner ay ang paghihiwalay ng pera ng negosyo sa personal na pera. Iwasang kumuha ng pera sa tindahan nang walang record."
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Kung kailangan mong kumuha para sa personal na gamit, itala ito bilang withdrawal o personal expense. Sa ganitong paraan, mas madaling masagot ang:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Kumita ba talaga ang negosyo?"
+          ],
+          [
+            "Magkano ang cash ng tindahan?"
+          ],
+          [
+            "Magkano ang dapat i-reinvest?"
+          ],
+          [
+            "Magkano ang maaari mong gamitin para sa personal na pangangailangan?"
+          ]
+        ]
+      },
+      {
+        type: "h2",
+        text: "7. Mag-ingat sa Utang"
+      },
+      {
+        type: "p",
+        runs: [
+          "Karaniwan ang pautang sa sari-sari store, lalo na sa mga kapitbahay. Pero kung walang maayos na record, nagiging problema ito sa cash flow. Kung magpapautang ka, magkaroon ng malinaw na talaan ng:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Pangalan ng customer"
+          ],
+          [
+            "Halaga ng utang"
+          ],
+          [
+            "Petsa ng utang"
+          ],
+          [
+            "Mga bayad"
+          ],
+          [
+            "Natitirang balance"
+          ],
+          [
+            "Due date, kung mayroon"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Tandaan: ang utang na hindi nakokolekta ay hindi cash na hawak ng negosyo. Kapag dumami na ang credit customers, mahirap nang asahan ang memorya — kaya mahalagang feature ang utang tracking sa anumang sistemang gagamitin mo, gaya ng tinalakay sa ",
+          {
+            text: "gabay sa pagpili ng POS system para sa sari-sari store",
+            href: "/blog/how-to-choose-pos-system-sari-sari-store"
+          },
+          "."
+        ]
+      },
+      {
+        type: "h2",
+        text: "8. Panatilihing Maayos at Malinis ang Tindahan"
+      },
+      {
+        type: "p",
+        runs: [
+          "Hindi kailangang malaki ang store para maging kaaya-aya. Panatilihing:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Malinis ang counter"
+          ],
+          [
+            "Maayos ang shelves"
+          ],
+          [
+            "Madaling makita ang presyo"
+          ],
+          [
+            "Organisado ang mga produkto"
+          ],
+          [
+            "Nakahiwalay ang food at non-food products"
+          ],
+          [
+            "Maayos ang stock rotation"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Ang simpleng tindahan na malinis at organisado ay mas madaling pamahalaan at mas komportable para sa mga customer."
+        ]
+      },
+      {
+        type: "h2",
+        text: "9. Alamin Kung Ano ang Iyong Best Sellers"
+      },
+      {
+        type: "p",
+        runs: [
+          "Pagkalipas ng ilang linggo, simulan mong suriin ang iyong benta:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Ano ang pinakamabilis maubos?"
+          ],
+          [
+            "Ano ang mabagal ibenta?"
+          ],
+          [
+            "Anong oras pinakamaraming customer?"
+          ],
+          [
+            "Anong araw pinakamalakas ang sales?"
+          ],
+          [
+            "Anong mga produkto ang madalas bilhin nang sabay?"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Makakatulong ito para mas matalino ang iyong pag-order ng stock. Kung mabilis maubos ang isang produkto, maaari kang magdagdag ng stock nito. Kung ilang linggo nang hindi gumagalaw ang isang produkto, maaaring bawasan ang order o suriin kung tama ang presyo."
+        ]
+      },
+      {
+        type: "h2",
+        text: "10. Gumamit ng POS Habang Lumalaki ang Tindahan"
+      },
+      {
+        type: "p",
+        runs: [
+          "Sa simula, sapat na ang notebook para sa maliit na operasyon. Pero habang dumadami ang produkto at transaksyon, mas mahirap nang subaybayan ang lahat nang mano-mano. Dito nakakatulong ang isang POS system, na mas mabilis mag-record ng:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Sales"
+          ],
+          [
+            "Products"
+          ],
+          [
+            "Inventory"
+          ],
+          [
+            "Customers"
+          ],
+          [
+            "Utang"
+          ],
+          [
+            "Payments"
+          ],
+          [
+            "Sales reports"
+          ],
+          [
+            "Low-stock items"
+          ],
+          [
+            "Best-selling products"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Ang layunin ng POS ay hindi gawing komplikado ang negosyo, kundi gawing mas simple ang araw-araw na trabaho ng store owner. Mas malalim ang paliwanag dito sa ",
+          {
+            text: "kung paano nakakatulong ang POS system sa maliliit na negosyo",
+            href: "/blog/how-pos-system-helps-small-businesses"
+          },
+          "."
+        ]
+      },
+      {
+        type: "h2",
+        text: "11. Huwag Agad Gumastos sa Hindi Kailangan"
+      },
+      {
+        type: "p",
+        runs: [
+          "Kapag nagsisimula pa lang, unahin ang mga bagay na direktang nakakatulong sa operasyon. Hindi mo kailangang bumili agad ng mamahaling kagamitan o maraming accessories."
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Para sa basic na sari-sari store, kadalasan ay sapat na ang telepono, tablet o laptop na mayroon ka na, kasama ang tamang POS o inventory system at maayos na stock management. Mahalagang itugma ang gastos sa laki at pangangailangan ng negosyo."
+        ]
+      },
+      {
+        type: "h2",
+        text: "12. Magkaroon ng Simpleng Business Routine"
+      },
+      {
+        type: "p",
+        runs: [
+          "Mag-set ng regular na routine para hindi ka malito sa operasyon."
+        ]
+      },
+      {
+        type: "h3",
+        text: "Araw-araw"
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "I-check ang cash"
+          ],
+          [
+            "I-record ang sales"
+          ],
+          [
+            "I-check ang low-stock items"
+          ],
+          [
+            "Ayusin ang shelves"
+          ],
+          [
+            "I-record ang mga pautang at bayad"
+          ]
+        ]
+      },
+      {
+        type: "h3",
+        text: "Bawat linggo"
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Suriin ang best sellers"
+          ],
+          [
+            "I-check ang slow-moving products"
+          ],
+          [
+            "Magplano ng restocking"
+          ],
+          [
+            "Suriin ang expenses"
+          ],
+          [
+            "I-check ang outstanding utang"
+          ]
+        ]
+      },
+      {
+        type: "h3",
+        text: "Bawat buwan"
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "I-compute ang sales"
+          ],
+          [
+            "Suriin ang gross profit"
+          ],
+          [
+            "Suriin ang expenses"
+          ],
+          [
+            "Tingnan ang inventory"
+          ],
+          [
+            "Magplano para sa susunod na buwan"
+          ]
+        ]
+      },
+      {
+        type: "h2",
+        text: "Magkano ang Kailangan Para Magsimula?"
+      },
+      {
+        type: "p",
+        runs: [
+          "Walang iisang halaga na tama para sa lahat. Ang kinakailangang puhunan ay depende sa:"
+        ]
+      },
+      {
+        type: "ul",
+        items: [
+          [
+            "Laki ng tindahan"
+          ],
+          [
+            "Lokasyon"
+          ],
+          [
+            "Dami ng produkto"
+          ],
+          [
+            "Kagamitan"
+          ],
+          [
+            "Presyo ng supplier"
+          ],
+          [
+            "Permits at registration"
+          ],
+          [
+            "Available na working capital"
+          ]
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Mas mabuting gumawa muna ng budget kaysa bumili nang walang plano. Magsimula ayon sa kaya mong puhunan, at palakihin ang inventory habang lumalaki ang demand."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Ang Pinakamahalagang Rule: Alamin ang Iyong Sales at Stock"
+      },
+      {
+        type: "p",
+        runs: [
+          "Ang sari-sari store ay maaaring maliit na negosyo, pero pera pa rin ang pinag-uusapan. Kung hindi mo alam kung magkano ang iyong sales, stock, expenses at utang, mahirap malaman kung tunay na kumikita ang negosyo."
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Kaya habang lumalaki ang tindahan, mahalagang magkaroon ng sistemang makakatulong sa iyong makita ang buong larawan — gaya ng ",
+          {
+            text: "Tindahan POS",
+            href: "/projects/tindahan-pos"
+          },
+          ", na ginawa ko para sa mga tindahang katulad ng sa akin."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Mula sa Notebook Papunta sa Mas Organisadong Store"
+      },
+      {
+        type: "p",
+        runs: [
+          "Hindi naman kailangang baguhin lahat sa unang araw. Maaari kang magsimula nang simple:"
+        ]
+      },
+      {
+        type: "flow",
+        steps: [
+          "Planuhin ang puhunan",
+          "Piliin ang tamang produkto",
+          "Subaybayan ang stock",
+          "I-record ang sales",
+          "Kontrolin ang expenses",
+          "Suriin ang kita",
+          "Palakihin ang negosyo"
+        ]
+      },
+      {
+        type: "p",
+        runs: [
+          "Ang isang maliit na sari-sari store ay maaaring maging simula ng mas malaking negosyo. Ang mahalaga ay maayos ang pundasyon at alam mo kung saan napupunta ang bawat piso."
+        ]
+      },
+      {
+        type: "callout",
+        runs: [
+          "Maliit man ang tindahan, malaking bagay ang tamang sistema."
         ]
       }
     ]
