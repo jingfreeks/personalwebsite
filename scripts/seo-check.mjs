@@ -135,6 +135,24 @@ async function auditSitemapAndRobots() {
   return locs;
 }
 
+async function auditFeed(postCount) {
+  const res = await fetch(base + "/blog/rss.xml");
+  if (!res.ok) return fail(`/blog/rss.xml: HTTP ${res.status}`);
+  if (!/xml/.test(res.headers.get("content-type") ?? "")) fail("/blog/rss.xml: not served as XML");
+  const xml = await res.text();
+  if (!/<rss[\s>]/.test(xml)) fail("/blog/rss.xml: not an RSS document");
+  if (!/<atom:link[^>]+rel="self"/.test(xml)) warn("/blog/rss.xml: no atom:link rel=self");
+  const items = (xml.match(/<item>/g) ?? []).length;
+  if (items !== postCount) fail(`/blog/rss.xml lists ${items} item(s) but the sitemap has ${postCount} article(s)`);
+  for (const link of [...xml.matchAll(/<link>([^<]+)<\/link>/g)].map((m) => m[1]).slice(1)) {
+    const r = await fetch(base + link.replace(/^https?:\/\/[^/]+/, ""), { method: "HEAD" });
+    if (!r.ok) fail(`/blog/rss.xml item ${link} returns HTTP ${r.status}`);
+  }
+  const home = await (await fetch(base + "/")).text();
+  if (!/<link[^>]+application\/rss\+xml/.test(home)) warn("home page has no RSS autodiscovery link");
+  return items;
+}
+
 try {
   await boot();
   console.log(`SEO check against ${base}\n`);
@@ -154,9 +172,10 @@ try {
     }
   }
   if (!locs.some((l) => l.replace(/\/$/, "").endsWith("/blog"))) await auditPage("/blog", { expectIndex: false });
+  const feedItems = await auditFeed(locs.filter((l) => /\/blog\/[^/]+$/.test(l)).length);
   const nf = await fetch(base + "/this-page-does-not-exist");
   if (nf.status !== 404) fail(`unknown URL returns HTTP ${nf.status} instead of 404`);
-  if (home) console.log(`  title: ${home.title}\n  description (${home.desc.length}): ${home.desc}\n  sitemap: ${locs.length} URL(s), all audited\n`);
+  if (home) console.log(`  title: ${home.title}\n  description (${home.desc.length}): ${home.desc}\n  sitemap: ${locs.length} URL(s), all audited\n  rss: ${feedItems ?? 0} item(s)\n`);
 } catch (e) {
   fail(e.message);
 } finally {
