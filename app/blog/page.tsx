@@ -68,15 +68,18 @@ export default function BlogPage() {
                         <time dateTime={p.publishedAt}>
                           {new Date(p.publishedAt).toLocaleDateString("en-PH", { year: "numeric", month: "long", day: "numeric" })}
                         </time>
+                        {p.lang === "tl" && (
+                          <span className="rounded-full border border-white/10 px-2 py-0.5 text-[0.65rem] text-primary/75">Filipino</span>
+                        )}
                         <span aria-hidden="true">&middot;</span>
                         <span>{readingTime(p)} min read</span>
                       </div>
-                      <h2 className="font-heading mt-2 text-[1.25rem] font-bold text-primary">
+                      <h2 lang={p.lang === "tl" ? "tl" : undefined} className="font-heading mt-2 text-[1.25rem] font-bold text-primary">
                         <Link href={`/blog/${p.slug}`} className="plain hover:text-accent-light">
                           {p.title}
                         </Link>
                       </h2>
-                      <p className="mt-2 text-[0.9rem] leading-relaxed text-primary/85">{p.description}</p>
+                      <p lang={p.lang === "tl" ? "tl" : undefined} className="mt-2 text-[0.9rem] leading-relaxed text-primary/85">{p.description}</p>
                       <Link
                         href={`/blog/${p.slug}`}
                         className="plain mt-3 inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-link hover:text-accent-light"
