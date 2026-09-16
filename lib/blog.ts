@@ -245,7 +245,13 @@ export const blogPosts: BlogPost[] = [
       "Learn why inventory management matters for sari-sari stores and how better stock tracking can reduce shortages, overstocking, losses, and missed sales.",
     category: "business-software",
     publishedAt: "2026-09-15",
-    cover: { icon: "inventory", label: "Shelves of packaged goods with stock levels tracked" },
+    cover: {
+      icon: "inventory",
+      label:
+        "Article banner: a sari-sari store owner checking stock against a Tindahan POS inventory screen on a laptop, beside the title \"Why Sari-Sari Stores Need Better Inventory Management\"",
+      image: "/assets/blog/sari-sari-store-inventory-management.webp",
+      ogImage: "/assets/blog/sari-sari-store-inventory-management-og.jpg",
+    },
     relatedSlugs: ["how-pos-system-helps-small-businesses", "how-to-choose-pos-system-sari-sari-store"],
     body: [
       {
